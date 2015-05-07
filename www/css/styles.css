@@ -10,6 +10,39 @@
     font-family: SSPL;
     src: url(../fonts/SourceSansPro-Light.otf);
 }
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(1.0);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+  }
+  to { 
+    -webkit-transform: scale(1.0);
+  }
+}
+@-moz-keyframes pulse {
+  from {
+    -moz-transform: scale(1.0);
+  }
+  50% {
+    -moz-transform: scale(1.1);
+  }
+  to { 
+    -moz-transform: scale(1.0);
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to { 
+    transform: scale(1.0);
+  }
+}
 body {
 	background-color: #484848;
 	font-family: SSP;
@@ -229,9 +262,127 @@ button{
 	top:600px;
 	display: none;
 	width: 100%;
+	color: #fff;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
 }
 .showSection{
 	top:80px !important;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#technical{
+	float: left;
+	width: auto;
+	cursor: pointer;
+}
+#creative{
+	float: right;
+	width: auto;
+	cursor: pointer;
+}
+#lucid {
+	padding-top: 25px;
+}
+.selected {
+	color: #F0B928;
+	border-bottom: 4px solid #F0B928;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.skillcircle {
+	background-image: url('../images/htmlcss.svg');
+	background-size: 0%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	font-family: sspb;
+	font-size: 17px;
+	color: #28A960;
+	line-height: 18px;
+	margin-left: 5px;
+	width: 100px;
+	height: 100px;
+	float: left;
+	border-radius: 68px;
+	margin-right: 5px;
+	text-align: center;
+	padding-top: 33px;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+.skillopen{
+	background-size: 100%;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#photoshop {
+	background-image: url('../images/photoshop.svg');	
+}
+#html {
+	background-image: url('../images/html.svg');	
+}
+#css {
+	background-image: url('../images/css.svg');	
+}
+#indesign {
+	background-image: url('../images/indesign.svg');	
+}
+#illustrator {
+	background-image: url('../images/illustrator.svg');	
+}
+#jquery {
+	background-image: url('../images/jquery.svg');	
+}
+#javascript {
+	background-image: url('../images/javascript.svg');	
+}
+#docker {
+	background-image: url('../images/docker.svg');	
+}
+#git {
+	background-image: url('../images/git.svg');	
+}
+#invision {
+	background-image: url('../images/invisionapp.svg');	
+}
+#lucid {
+	background-image: url('../images/lucid.svg');	
+}
+#sketch {
+	background-image: url('../images/sketch.svg');	
+}
+#angular {
+	background-image: url('../images/angular.svg');	
+}
+#balsamiq {
+	background-image: url('../images/balsamiq.svg');	
+}
+#bootstrap {
+	background-image: url('../images/bootstrap.svg');	
+}
+.skillrow1 {
+	width: 440px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+.skillrow2 {
+	width: 332px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
 }
 /*INTRO*/
 .aboutsection{

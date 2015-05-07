@@ -22,7 +22,23 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 	$scope.skills = false;
 
 	$scope.skillOpen = function(){
-			$('#skills').fadeIn(300).addClass("showSection");
+		$('#skills').delay(500).fadeIn(300, function() {
+			$('#skills').delay(300).addClass("showSection").delay(300).queue(function(next){
+				$('#illustrator').addClass('skillopen').delay(200).queue(function(next){
+					$('#sketch').addClass('skillopen').delay(200).queue(function(next){
+						$('#photoshop').addClass('skillopen').delay(200).queue(function(next){
+							$('#lucid').addClass('skillopen').delay(200).queue(function(next){
+								$('#balsamiq').addClass('skillopen').delay(200).queue(function(next){
+									$('#invision').addClass('skillopen').delay(200).queue(function(next){
+										$('#indesign').addClass('skillopen');
+									});
+								});
+							});
+						});
+					});
+				});
+			});
+		});
 	}
 
 	$(function(){
@@ -27338,7 +27354,7 @@ var styleDirective = valueFn({
 
 module.exports = function($routeProvider, $locationProvider) {
 	$routeProvider.
-		when('/', {template: "<div class=\"aboutsection\" ng-class=\"{'aboutsection': intro, 'aboutsection removesection': !intro}\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"intro = !intro; skillOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Technical and Creative Skills\n\t</div>\n</div>\n<!-- Skills -->\n<div class=\"row\"  id=\"skills\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>", controller: 'MainCtrl'}).
+		when('/', {template: "<div class=\"aboutsection\" ng-class=\"{'aboutsection': intro, 'aboutsection removesection': !intro}\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"intro = !intro; skillOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Technical and Creative Skills\n\t</div>\n</div>\n<!-- Skills -->\n<div class=\"row\" id=\"skills\">\n\t<div class=\"row skills\">\n\t\t<div class=\"col-sm-5\">\n\t\t\t<div class=\"selected\" id=\"creative\">\n\t\t\t\t<h1>Creative</h1>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-sm-5 col-sm-offset-2\">\n\t\t\t<div  id=\"technical\">\n\t\t\t\t<h1>Technical</h1>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div id=\"technicalskills\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"skillrow1\">\n\t\t\t\t<div id=\"illustrator\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"sketch\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"photoshop\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"lucid\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"skillrow2\">\n\t\t\t\t<div id=\"balsamiq\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"invision\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"indesign\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>", controller: 'MainCtrl'}).
 		when('/test', {template: "<h1>Test.html</h1>", controller: 'MainCtrl'}).
 		when('/foo', {template: "<h1>Foo.html</h1>", controller: 'MainCtrl'});
 	$locationProvider.html5Mode(false);

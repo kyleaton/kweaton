@@ -5,7 +5,23 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 	$scope.skills = false;
 
 	$scope.skillOpen = function(){
-			$('#skills').fadeIn(300).addClass("showSection");
+		$('#skills').delay(500).fadeIn(300, function() {
+			$('#skills').delay(300).addClass("showSection").delay(300).queue(function(next){
+				$('#illustrator').addClass('skillopen').delay(200).queue(function(next){
+					$('#sketch').addClass('skillopen').delay(200).queue(function(next){
+						$('#photoshop').addClass('skillopen').delay(200).queue(function(next){
+							$('#lucid').addClass('skillopen').delay(200).queue(function(next){
+								$('#balsamiq').addClass('skillopen').delay(200).queue(function(next){
+									$('#invision').addClass('skillopen').delay(200).queue(function(next){
+										$('#indesign').addClass('skillopen');
+									});
+								});
+							});
+						});
+					});
+				});
+			});
+		});
 	}
 
 	$(function(){
