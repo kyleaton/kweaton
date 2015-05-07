@@ -1,4 +1,4 @@
-<div class="row" ng-hide="changepage" id="about">
+<div class="aboutsection" ng-class="{'aboutsection': intro, 'aboutsection removesection': !intro}">
 	<div class="row texthold">
 		<div class="col-sm-4">
 			<div class="bigme"></div>
@@ -23,11 +23,37 @@
 		</div>
 	</div>
 	<div class="mainctahold row">
-		<div ng-click="npoClose(); intro = !intro" class="maincta">
+		<div ng-click="intro = !intro; skillOpen();" class="maincta">
 			CONTINUE
 		</div>
 	</div>
 	<div class="ctalabel">
 		Next: Technical and Creative Skills
+	</div>
+</div>
+<!-- Skills -->
+<div class="row"  id="skills">
+	<div class="row texthold">
+		<div class="col-sm-4">
+			<div class="bigme"></div>
+		</div>
+		<div class="col-sm-6">
+			<div class="row">
+				<div id="text1" class="textcontain">
+					Welcome to my site. 
+				</div>
+			</div>
+			<div class="row">
+				<div id="text2" class="textcontain">
+					I&#39;m a Front-End Developer, 
+					UI/UX Designer and Web Analytics Guru.
+				</div>
+			</div>
+			<div class="row">
+				<div id="text3" class="textcontain">
+					Click below to see my to learn more about me or click to menu button to skip to specific sections.
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

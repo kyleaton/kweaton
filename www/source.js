@@ -18,10 +18,11 @@ angular.module('kweaton', ['ngRoute', 'ngResource', 'ui.bootstrap'])
 module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($scope, $location, $routeParams, $modal) {
 	$scope.about = false;
 	$scope.burga = false;
-	$scope.intro = false;
+	$scope.intro = true;
+	$scope.skills = false;
 
-	$scope.npoClose = function(){
-			$scope.intro = true;
+	$scope.skillOpen = function(){
+			$('#skills').fadeIn(300).addClass("showSection");
 	}
 
 	$(function(){
@@ -27337,7 +27338,7 @@ var styleDirective = valueFn({
 
 module.exports = function($routeProvider, $locationProvider) {
 	$routeProvider.
-		when('/', {template: "<div class=\"row\" ng-hide=\"changepage\" id=\"about\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"npoClose(); intro = !intro\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Technical and Creative Skills\n\t</div>\n</div>", controller: 'MainCtrl'}).
+		when('/', {template: "<div class=\"aboutsection\" ng-class=\"{'aboutsection': intro, 'aboutsection removesection': !intro}\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"intro = !intro; skillOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Technical and Creative Skills\n\t</div>\n</div>\n<!-- Skills -->\n<div class=\"row\"  id=\"skills\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>", controller: 'MainCtrl'}).
 		when('/test', {template: "<h1>Test.html</h1>", controller: 'MainCtrl'}).
 		when('/foo', {template: "<h1>Foo.html</h1>", controller: 'MainCtrl'});
 	$locationProvider.html5Mode(false);

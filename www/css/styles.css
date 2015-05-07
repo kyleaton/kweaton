@@ -80,8 +80,13 @@ button{
 	margin-top: 9%;
 }
 .removesection{
-	top: -1000px;
-	opacity: 1;
+	top: -1000px !important;
+	opacity: 0 !important;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
 }
 .ctalabel {
 	width: 100%;
@@ -218,10 +223,27 @@ button{
 #about{
 	margin-top: 50px;
 }
+/*SKILLS*/
+#skills {
+	position: absolute;
+	top:600px;
+	display: none;
+	width: 100%;
+}
+.showSection{
+	top:80px !important;
+}
 /*INTRO*/
-#intro{
+.aboutsection{
 	position: absolute;
 	width: 100%;
+	top: 115px;
+	opacity: 1;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
 }
 .bigme {
 	background-image: url("../images/bigface.png");
