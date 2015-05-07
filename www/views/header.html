@@ -1,0 +1,45 @@
+<div id="header">
+	<div class="col-sm-2">
+		<div ng-click="burga = !burga" class="row">
+			<div class="buns">
+				<div class="burga">
+				</div>
+			</div>	
+			<div class="menutext">
+				MENU
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<h2>Kyle W. Eaton</h2>
+	</div>
+	<div class="col-sm-2">
+		<div class="headercta">CONTACT ME</div>
+	</div>
+</div>
+<div ng-class="{'mobilemenuhold': burga, 'hidemenu': !burga}">
+	<div id="subheader">
+		<ul class="nav navbar-nav navbar-right">
+			<li>
+				<button class="subbtn" id="how">
+					HOW IT WORKS
+				</button>
+			</li>
+			<li>
+				<button class="subbtn" id="clinical">
+					WHAT IS CLINICAL RESEARCH
+				</button>
+			</li>
+			<li>
+				<button class="subbtn" id="npo">
+					NON-PROFITS
+				</button>
+			</li>
+			<li>
+				<button class="subbtn" id="faq">
+					FAQS
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>

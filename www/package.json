@@ -1,0 +1,26 @@
+{
+  "name": "KyleEatonPortfolio",
+  "version": "0.0.1",
+  "description": "Kyle Eaton Portfolio Site",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "napa",
+    "build": "browserify -t brfs -t envify app.js > source.js",
+    "watch-js": "watchify -t brfs -t envify ./app.js -o source.js"
+  },
+  "author": "Kyle Eaton",
+  "license": "ISC",
+  "napa": {
+    "angular-route": "angular/bower-angular-route",
+    "angular-resource": "angular/bower-angular-resource"
+  },
+  "dependencies": {
+    "napa": "^1.2.0",
+    "angular-bootstrap": "0.12.0",
+    "angular": "1.3.0",
+    "brfs": "^1.2.0",
+    "browserify": "^8.1.1",
+    "envify": "^3.3.0",
+    "watchify": "^2.3.0"
+  }
+}
