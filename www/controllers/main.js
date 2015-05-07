@@ -24,6 +24,31 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 		});
 	}
 
+	$scope.creativeOpen = function(){
+		var skillopen = $( ".skillopen" );
+		$(skillopen).removeClass('skillopen').delay(50).queue(function(next){
+			$('#technicalskills').fadeOut(300, function() {
+			$('#creativeskills').fadeIn(50, function() {
+				$('#illustrator').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+				$('#balsamiq').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+				});		
+			});
+		});
+	}
+	$scope.technicalOpen = function() {
+		var skillopen = $( ".skillopen" );
+		$('#illustrator').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen');
+				$('#balsamiq').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen').delay(50).queue(function(next){
+			$('#creativeskills').fadeOut(300, function() {
+			$('#technicalskills').fadeIn(50, function() {
+				$('#html').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+				$('#less').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+				});		
+			});
+		});
+	}
+
+
 	$(function(){
 		if ($scope.about === false) {
 			textOne = setTimeout(function(){

@@ -372,6 +372,9 @@ button{
 #bootstrap {
 	background-image: url('../images/bootstrap.svg');	
 }
+#less {
+	background-image: url('../images/less.svg');	
+}
 .skillrow1 {
 	width: 440px;
 	margin-left: auto;
@@ -380,6 +383,18 @@ button{
 }
 .skillrow2 {
 	width: 332px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+.skillrow3 {
+	width: 550px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+.skillrow4 {
+	width: 440px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5px;
