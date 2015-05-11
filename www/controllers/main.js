@@ -3,6 +3,8 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 	$scope.burga = false;
 	$scope.intro = true;
 	$scope.skills = false;
+	$scope.technical = false;
+	$scope.creative = true;
 
 	$scope.skillOpen = function(){
 		$('#skills').delay(500).fadeIn(300, function() {
@@ -25,27 +27,56 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 	}
 
 	$scope.creativeOpen = function(){
-		var skillopen = $( ".skillopen" );
-		$(skillopen).removeClass('skillopen').delay(50).queue(function(next){
-			$('#technicalskills').fadeOut(300, function() {
-			$('#creativeskills').fadeIn(50, function() {
-				$('#illustrator').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
-				$('#balsamiq').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
-				});		
+		if($scope.creative === false){
+			var skillopen = $( ".skillcircle" );
+			$(skillopen).removeClass('skillopen').delay(50).queue(function(next){
+				$('#technicalskills').fadeOut(300, function() {
+				$('#creativeskills').fadeIn(50, function() {
+					$('#illustrator').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+					$('#balsamiq').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+					});		
+				});
 			});
-		});
+			$scope.creative = true;
+			$scope.technical = false;
+		}
+		else{
+			var barclosed = $(".barclosed");
+			var skillopen = $( ".skillcircle" );
+			var bartext = $( ".creativebartext" );
+			var xytext = $( ".xytext" );
+			$('#skillcontain').addClass('graphholder').delay(50).queue(function(next){
+				$('#graphbottom').addClass('go').delay(500).queue(function(next){
+					$(skillopen).removeClass('skillopen').delay(50).queue(function(next){
+						$('#creativecirlcecontain').fadeOut(300, function() {
+							$('#creativegraph').fadeIn(50, function() {
+								$(xytext).fadeIn(200, function() {
+									$(barclosed).removeClass('barclosed').delay(50).queue(function(next){
+										$(bartext).fadeIn(100);
+									});
+								});
+							});
+						});
+					});
+				});	
+			});		
+		}
 	}
 	$scope.technicalOpen = function() {
-		var skillopen = $( ".skillopen" );
-		$('#illustrator').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen');
-				$('#balsamiq').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen').delay(50).queue(function(next){
-			$('#creativeskills').fadeOut(300, function() {
-			$('#technicalskills').fadeIn(50, function() {
-				$('#html').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
-				$('#less').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
-				});		
+		if($scope.technical === false){
+			var skillopen = $( ".skillcircle" );
+			$('#illustrator').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen');
+					$('#balsamiq').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen').delay(50).queue(function(next){
+				$('#creativeskills').fadeOut(300, function() {
+					$('#technicalskills').fadeIn(50, function() {
+						$('#html').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+						$('#less').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+					});		
+				});
 			});
-		});
+			$scope.technical = true;
+			$scope.creative = false;
+		}
 	}
 
 
