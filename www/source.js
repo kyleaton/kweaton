@@ -22,6 +22,8 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 	$scope.skills = false;
 	$scope.technical = false;
 	$scope.creative = true;
+	$scope.creativegraph = false;
+	$scope.creativefast = false;
 
 	$scope.skillOpen = function(){
 		$('#skills').delay(500).fadeIn(300, function() {
@@ -32,7 +34,7 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 							$('#lucid').addClass('skillopen').delay(200).queue(function(next){
 								$('#balsamiq').addClass('skillopen').delay(200).queue(function(next){
 									$('#invision').addClass('skillopen').delay(200).queue(function(next){
-										$('#indesign').addClass('skillopen');
+										$('#indesign').addClass('skillopen').stop('fx', true, true);
 									});
 								});
 							});
@@ -42,41 +44,101 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 			});
 		});
 	}
-
-	$scope.creativeOpen = function(){
-		if($scope.creative === false){
+	$scope.closeGraph = function(){
+	var creativebar = $(".creativebar");
 			var skillopen = $( ".skillcircle" );
-			$(skillopen).removeClass('skillopen').delay(50).queue(function(next){
-				$('#technicalskills').fadeOut(300, function() {
-				$('#creativeskills').fadeIn(50, function() {
-					$('#illustrator').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
-					$('#balsamiq').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
-					});		
-				});
+			var bartext = $( ".creativebartext" );
+			
+			$(bartext).fadeOut(100, function(){
+				$(creativebar).addClass('barclosed').delay(600).clearQueue().finish().queue(function(){
+					$('#creativex').fadeOut(200).dequeue().clearQueue().finish(); 
+					$('#creativexy').fadeOut(200, function(){
+						$('#graphbottom').removeClass('go');
+						$('#skillcontain').removeClass('graphholder');
+						$('#creativecirlcecontain').fadeIn(300, function() {
+							$('#illustrator').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').dequeue().clearQueue().finish();
+							$('#balsamiq').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').dequeue().clearQueue().finish();
+						});
+					});
+				});	
 			});
-			$scope.creative = true;
-			$scope.technical = false;
-		}
-		else{
+			stop('fx', true, true);
+			$scope.creativegraph = false;
+			console.log('close graph open circles');
+	}
+	$scope.closeGraphFast = function(){
+	var creativebar = $(".creativebar");
+	var skillopen = $( ".skillcircle" );
+	var bartext = $( ".creativebartext" );
+	$(bartext).fadeOut(100, function(){
+		$(creativebar).addClass('barclosed');
+			$('#creativex').fadeOut(200); 
+			$('#creativexy').fadeOut(200);
+				$('#graphbottom').removeClass('go');
+				$('#skillcontain').removeClass('graphholder');
+	});
+	stop('fx', true, true);
+	console.log('close graph open circles');
+	}
+	$scope.openGraph = function (){
 			var barclosed = $(".barclosed");
 			var skillopen = $( ".skillcircle" );
 			var bartext = $( ".creativebartext" );
 			var xytext = $( ".xytext" );
-			$('#skillcontain').addClass('graphholder').delay(50).queue(function(next){
-				$('#graphbottom').addClass('go').delay(500).queue(function(next){
-					$(skillopen).removeClass('skillopen').delay(50).queue(function(next){
+			$('#skillcontain').addClass('graphholder');
+			$('#graphbottom').addClass('go').delay(50).queue(function(next){
+					$(skillopen).removeClass('skillopen').dequeue().delay(50).queue(function(next){
 						$('#creativecirlcecontain').fadeOut(300, function() {
 							$('#creativegraph').fadeIn(50, function() {
 								$(xytext).fadeIn(200, function() {
 									$(barclosed).removeClass('barclosed').delay(50).queue(function(next){
-										$(bartext).fadeIn(100);
+										$(bartext).fadeIn(100).clearQueue().finish();
 									});
 								});
 							});
 						});
 					});
-				});	
-			});		
+			});
+			stop('fx', true, true);
+			$scope.creativegraph = true;
+			$scope.creativefast = true;
+			console.log('open graph close circles');
+	}
+	$scope.openCircles =function (){
+		var skillopen = $( ".skillcircle" );
+			$(skillopen).removeClass('skillopen').delay(50).queue(function(next){
+				$('#technicalskills').dequeue().fadeOut(300, function() {
+				$('#creativeskills').fadeIn(50, function() {
+					$('#illustrator').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').clearQueue().finish();
+					$('#balsamiq').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').clearQueue().finish();
+					});		
+				});
+			});
+			stop('fx', true, true);
+			$scope.creative = true;
+			$scope.technical = false;
+			console.log('open creative circles');	
+	}
+	$scope.fastCircleClose = function (){
+		$('#illustrator').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen');
+		$('#balsamiq').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen');			
+	}
+	$scope.creativeOpen = function(){
+		if($scope.creative === true && $scope.technical === false && $scope.creativegraph === true && $scope.creativefast === false){
+			$scope.closeGraph();
+		}
+		if($scope.creative === true && $scope.technical === false && $scope.creativegraph === true && $scope.creativefast === true){
+			$scope.closeGraphFast();
+			$scope.openCircles();
+		}
+		else if($scope.creative === true && $scope.technical === false && $scope.creativefast === false){
+			$scope.openGraph();
+		}
+		else if($scope.creative === false && $scope.creativefast === false){
+			$scope.openCircles();
+		}
+		else if($scope.creative === true && $scope.technical === false && $scope.creativegraph === true && $scope.creativefast === true){
+			$scope.fastCircleClose();
 		}
 	}
 	$scope.technicalOpen = function() {
@@ -86,8 +148,8 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 					$('#balsamiq').removeClass('skillopen').next().removeClass('skillopen').next().removeClass('skillopen').delay(50).queue(function(next){
 				$('#creativeskills').fadeOut(300, function() {
 					$('#technicalskills').fadeIn(50, function() {
-						$('#html').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
-						$('#less').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').stop( true );
+						$('#html').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').clearQueue().finish();
+						$('#less').addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').next().addClass('skillopen').clearQueue().finish();
 					});		
 				});
 			});
@@ -27410,7 +27472,7 @@ var styleDirective = valueFn({
 
 module.exports = function($routeProvider, $locationProvider) {
 	$routeProvider.
-		when('/', {template: "<div class=\"aboutsection\" ng-class=\"{'aboutsection': intro, 'aboutsection removesection': !intro}\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"intro = !intro; skillOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Technical and Creative Skills\n\t</div>\n</div>\n<!-- Skills -->\n<div class=\"row \" id=\"skills\">\n\t<div class=\"row skills\">\n\t\t<div class=\"col-sm-5\">\n\t\t\t<div ng-click=\"creativeOpen();\" class=\"selected\" id=\"creative\">\n\t\t\t\t<h1>Creative</h1>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-sm-5 col-sm-offset-2\">\n\t\t\t<div ng-click=\"technicalOpen()\" id=\"technical\">\n\t\t\t\t<h1>Technical</h1>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"row\" id=\"creativeskills\">\n\t\t<div class=\"col-sm-2 col-sm-offset-1\">\n\t\t\t<div class=\"xytext\">\n\t\t\t\t<div id=\"creativexy\" class=\"ytext\">\n\t\t\t\t\tCreative Skills\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"skillcontain\" class=\"col-sm-7\">\n\t\t\t<div id=\"creativecirlcecontain\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"skillrow1\">\n\t\t\t\t\t\t<div id=\"illustrator\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"sketch\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"photoshop\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"lucid\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"skillrow2\">\n\t\t\t\t\t\t<div id=\"balsamiq\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"invision\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"indesign\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"creativegraph\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-12 padding0\">\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"invisiongraph\" class=\"barclosed bar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tInvisionApp\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"indesigngraph\" class=\"barclosed bar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tInDesign\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"lucidgraph\" class=\"barclosed bar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tLucid Charts\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"balsamiqgraph\" class=\"barclosed bar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tBalsamiq\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"sketchgraph\" class=\"barclosed bar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tSketch 3\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div  class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"illustratorgraph\" class=\"barclosed bar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tIllustrator\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"photoshopgraph\" class=\"barclosed bar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tPhotoshop\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"graphbottom\"></div>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"xytext\">\n\t\t\t<div id=\"creativexy\" class=\"xtext\">\n\t\t\t\tExperience Level\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div id=\"technicalskills\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"skillrow3\">\n\t\t\t\t<div id=\"html\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"css\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"bootstrap\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"javascript\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"jquery\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"skillrow4\">\n\t\t\t\t<div id=\"less\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"docker\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"git\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"angular\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>", controller: 'MainCtrl'}).
+		when('/', {template: "<div class=\"aboutsection\" ng-class=\"{'aboutsection': intro, 'aboutsection removesection': !intro}\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"intro = !intro; skillOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Technical and Creative Skills\n\t</div>\n</div>\n<!-- Skills -->\n<div class=\"row \" id=\"skills\">\n\t<div class=\"row skills\">\n\t\t<div class=\"col-sm-5\">\n\t\t\t<div ng-click=\"creativeOpen();\" class=\"selected\" id=\"creative\">\n\t\t\t\t<h1>Creative</h1>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-sm-5 col-sm-offset-2\">\n\t\t\t<div ng-click=\"technicalOpen()\" id=\"technical\">\n\t\t\t\t<h1>Technical</h1>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"row\" id=\"creativeskills\">\n\t\t<div class=\"col-sm-2 col-sm-offset-1\">\n\t\t\t<div class=\"xytext\">\n\t\t\t\t<div id=\"creativexy\" class=\"ytext\">\n\t\t\t\t\tCreative Skills\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div id=\"skillcontain\" class=\"col-sm-6 padding0\">\n\t\t\t<div id=\"creativecirlcecontain\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"skillrow1\">\n\t\t\t\t\t\t<div id=\"illustrator\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"sketch\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"photoshop\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"lucid\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\t\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"skillrow2\">\n\t\t\t\t\t\t<div id=\"balsamiq\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"invision\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"indesign\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"creativegraph\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-12 padding0\">\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"invisiongraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tInvisionApp\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"indesigngraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tInDesign\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"lucidgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tLucid Charts\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"balsamiqgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tBalsamiq\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"sketchgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tSketch 3\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div  class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"illustratorgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tIllustrator\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t<div id=\"photoshopgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\tPhotoshop\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"graphbottom\"></div>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"xytext\">\n\t\t\t<div id=\"creativex\" class=\"xtext\">\n\t\t\t\tExperience Level\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div id=\"technicalskills\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"skillrow3\">\n\t\t\t\t<div id=\"html\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"css\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"bootstrap\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"javascript\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"jquery\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div class=\"skillrow4\">\n\t\t\t\t<div id=\"less\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"docker\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"git\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t\t<div id=\"angular\" class=\"skillcircle\">\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n</div>", controller: 'MainCtrl'}).
 		when('/test', {template: "<h1>Test.html</h1>", controller: 'MainCtrl'}).
 		when('/foo', {template: "<h1>Foo.html</h1>", controller: 'MainCtrl'});
 	$locationProvider.html5Mode(false);

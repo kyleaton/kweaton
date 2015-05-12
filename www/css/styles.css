@@ -412,20 +412,20 @@ button{
 .barclosed{
 	height:20px;
 	width: 0%!important;
-	-webkit-transition: all 600ms ease;
-	-moz-transition: all 600ms ease;
-	-o-transition: all 600ms ease;
-	-ms-transition: all 600ms ease;
-	transition: all 600ms ease;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	transition: all 200ms ease;
 }
-.bar{
+.creativebar{
 	height: 27px;
   	padding-top: 2px;
-	-webkit-transition: all 600ms ease;
-	-moz-transition: all 600ms ease;
-	-o-transition: all 600ms ease;
-	-ms-transition: all 600ms ease;
-	transition: all 600ms ease;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	transition: all 200ms ease;
 
 }
 #illustratorgraph{
@@ -522,11 +522,11 @@ button{
 }
 .go {
 	width:100% !important;
-	-webkit-transition: all 600ms ease;
-	-moz-transition: all 600ms ease;
-	-o-transition: all 600ms ease;
-	-ms-transition: all 600ms ease;
-	transition: all 600ms ease;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	transition: all 200ms ease;
 }
 #graphbottom{
     position: absolute;
@@ -535,7 +535,7 @@ button{
     width: 0%;
     height: 3px;
     background: #fff;
-    transition: all 0.6s;
+    transition: all 0.2s;
 }
 /*INTRO*/
 .aboutsection{
