@@ -266,6 +266,10 @@ button{
 	margin-top: 45px;
 	padding-left: 0px;
 }
+#technicalskillcontain{
+	margin-top: 45px;
+	padding-left: 0px;
+}
 #skills {
 	position: absolute;
 	top:600px;
@@ -409,6 +413,10 @@ button{
 #creativegraph{
 	display: none;
 }
+#technicalgraph{
+	display: none;
+	padding-top: 52px;
+}
 .barclosed{
 	height:20px;
 	width: 0%!important;
@@ -418,7 +426,35 @@ button{
 	-ms-transition: all 200ms ease;
 	transition: all 200ms ease;
 }
+.technicalbarclosed{
+	height:20px;
+	width: 0%!important;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.technicalgraphholder {
+  border-left: 3px solid #FFF;
+  height: 317px;
+  -webkit-transition: all 600ms ease;
+  -moz-transition: all 600ms ease;
+  -o-transition: all 600ms ease;
+  -ms-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
 .creativebar{
+	height: 27px;
+  	padding-top: 2px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	transition: all 200ms ease;
+
+}
+.technicalbar{
 	height: 27px;
   	padding-top: 2px;
 	-webkit-transition: all 200ms ease;
@@ -508,6 +544,16 @@ button{
 	margin-top: 1px;
 	display: none;
 }
+.technicalbartext {
+	color: #fff;
+	font-size: 14px;
+	font-family: ssp;
+	width: 95%;
+	text-align: right;
+	font-weight: 500;
+	margin-top: 1px;
+	display: none;
+}
 .graphholder {
 	border-left: 3px solid #FFF;
 	height: 280px;
@@ -529,6 +575,15 @@ button{
 	transition: all 200ms ease;
 }
 #graphbottom{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #fff;
+    transition: all 0.2s;
+}
+#technicalgraphbottom{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -588,6 +643,7 @@ button{
 	text-align: center;
 	font-size: 22px;
 	margin-top: 10px;
+	display: none;
 }
 .ytext{
 	width: 95%;
@@ -595,6 +651,7 @@ button{
 	text-align: right;
 	font-size: 22px;
 	margin-top: 160px;
+	display: none;
 }
 .xytext{
 	display: none;
