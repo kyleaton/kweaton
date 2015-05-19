@@ -5,8 +5,8 @@
         <g id="Graphs-Tech" transform="translate(-895.000000, -503.000000)">
             <g id="Group-Copy" transform="translate(267.000000, 507.000000)">
                 <g id="Oval-2-Copy-4-+-Jquery-Copy" transform="translate(632.000000, 0.000000)">
-                    <path d="M66.7,133 C103.426936,133 133.2,103.226936 133.2,66.5 C133.2,29.7730641 103.426936,0 66.7,0 C29.9730641,0 0.2,29.7730641 0.2,66.5 C0.2,103.226936 29.9730641,133 66.7,133 Z" id="Oval-2-Copy-4" stroke="#38A0CF" stroke-width="5" fill="#FFFFFF"></path>
-                    <text id="Angular.js" font-family="Source Sans Pro" font-size="25" font-weight="bold" fill="#38A0CF">
+                    <path d="M66.7,133 C103.426936,133 133.2,103.226936 133.2,66.5 C133.2,29.7730641 103.426936,0 66.7,0 C29.9730641,0 0.2,29.7730641 0.2,66.5 C0.2,103.226936 29.9730641,133 66.7,133 Z" id="Oval-2-Copy-4" stroke="#28A960" stroke-width="5" fill="#FFFFFF"></path>
+                    <text id="Angular.js" font-family="Source Sans Pro" font-size="25" font-weight="bold" fill="#28A960">
                         <tspan x="10.470122" y="74.2852437">Angular.js</tspan>
                     </text>
                 </g>

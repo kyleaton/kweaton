@@ -23,7 +23,7 @@
 		</div>
 	</div>
 	<div class="mainctahold row">
-		<div ng-click="intro = !intro; skillOpen();" class="maincta">
+		<div ng-click="intro = !intro; skills = !skills; skillOpen();" class="maincta">
 			CONTINUE
 		</div>
 	</div>
@@ -32,222 +32,335 @@
 	</div>
 </div>
 <!-- Skills -->
-<div class="row " id="skills">
+<div class="row " id="skills" ng-class="{'row': skills, 'removesection': !skills}">
 	<div class="row skills">
 		<div class="col-sm-5">
-			<div ng-click="creativeOpen();" class="selected" id="creative">
+			<div ng-click="creativeOpen();" ng-class="{'selected': creative, '':!creative}" id="creative">
 				<h1>Creative</h1>
 			</div>
 		</div>
 		<div class="col-sm-5 col-sm-offset-2">
-			<div ng-click="technicalOpen()" id="technical">
+			<div ng-click="technicalOpen()" id="technical" ng-class="{'selected': technical, '':!technical}">
 				<h1>Technical</h1>
 			</div>
 		</div>
 	</div>
-	<div class="row" id="creativeskills">
-		<div class="col-sm-2 col-sm-offset-1">
-			<div id="creativexy" class="ytext">
-				Creative Skills
+	<div class="wholeskillcontain">
+		<div class="row" id="creativeskills">
+			<div class="col-sm-2">
+				<div id="creativexy" class="ytext">
+					Creative Skills
+				</div>
+			</div>
+			<div id="skillcontain" class="col-sm-8 padding0">
+				<div id="creativecirlcecontain">
+					<div class="row">
+						<div class="skillrow1">
+							<div id="illustrator" class="skillcircle creativeopen">
+							</div>
+							<div id="sketch" class="skillcircle creativeopen">
+							</div>
+							<div id="photoshop" class="skillcircle creativeopen">
+							</div>
+							<div id="lucid" class="skillcircle creativeopen">
+							</div>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="skillrow2">
+							<div id="balsamiq" class="skillcircle">
+							</div>
+							<div id="invision" class="skillcircle">
+							</div>
+							<div id="indesign" class="skillcircle">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="creativegraph">
+					<div class="row">
+						<div class="col-sm-12 padding0">
+							<div class="barcontain">
+								<div id="invisiongraph" class="barclosed creativebar">
+									<div class="creativebartext">
+										InvisionApp
+									</div>
+								</div>
+							</div>
+							<div class="barcontain">
+								<div id="indesigngraph" class="barclosed creativebar">
+									<div class="creativebartext">
+										InDesign
+									</div>
+								</div>
+							</div>
+							<div class="barcontain">
+								<div id="lucidgraph" class="barclosed creativebar">
+									<div class="creativebartext">
+										Lucid Charts
+									</div>
+								</div>
+							</div>
+							<div class="barcontain">
+								<div id="balsamiqgraph" class="barclosed creativebar">
+									<div class="creativebartext">
+										Balsamiq
+									</div>
+								</div>
+							</div>
+							<div class="barcontain">
+								<div id="sketchgraph" class="barclosed creativebar">
+									<div class="creativebartext">
+										Sketch 3
+									</div>
+								</div>
+							</div>
+							<div  class="barcontain">
+								<div id="illustratorgraph" class="barclosed creativebar">
+									<div class="creativebartext">
+										Illustrator
+									</div>
+								</div>
+							</div>
+							<div class="barcontain">
+								<div id="photoshopgraph" class="barclosed creativebar">
+									<div class="creativebartext">
+										Photoshop
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="graphbottom"></div>
 			</div>
 		</div>
-		<div id="skillcontain" class="col-sm-6 padding0">
-			<div id="creativecirlcecontain">
-				<div class="row">
-					<div class="skillrow1">
-						<div id="illustrator" class="skillcircle creativeopen">
-						</div>
-						<div id="sketch" class="skillcircle creativeopen">
-						</div>
-						<div id="photoshop" class="skillcircle creativeopen">
-						</div>
-						<div id="lucid" class="skillcircle creativeopen">
-						</div>
-					</div>	
+		<div class="row">
+			<div id="creativex" class="xtext">
+				Experience Level
+			</div>
+		</div>
+		<div class="row" id="technicalskills">
+			<div class="col-sm-2">
+				<div id="technicalxy" class="ytext">
+					Technical Skills
 				</div>
+			</div>
+			<div id="technicalskillcontain" class="col-sm-8 padding0">
+				<div id="technicalcirlcecontain">
+					<div class="row">
+						<div class="skillrow3">
+							<div id="html" class="skillcircle">
+							</div>
+							<div id="css" class="skillcircle">
+							</div>
+							<div id="bootstrap" class="skillcircle">
+							</div>
+							<div id="javascript" class="skillcircle">
+							</div>
+							<div id="jquery" class="skillcircle">
+							</div>
+						</div>
+					</div>
 				<div class="row">
-					<div class="skillrow2">
-						<div id="balsamiq" class="skillcircle">
+					<div class="skillrow4">
+						<div id="less" class="skillcircle">
 						</div>
-						<div id="invision" class="skillcircle">
+						<div id="docker" class="skillcircle">
 						</div>
-						<div id="indesign" class="skillcircle">
+						<div id="git" class="skillcircle">
+						</div>
+						<div id="angular" class="skillcircle">
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="creativegraph">
+			<div id="technicalgraph">
 				<div class="row">
 					<div class="col-sm-12 padding0">
-						<div class="barcontain">
-							<div id="invisiongraph" class="barclosed creativebar">
-								<div class="creativebartext">
-									InvisionApp
+						<div class="technicalbarcontain">
+							<div id="dockerbar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									Docker
 								</div>
 							</div>
 						</div>
-						<div class="barcontain">
-							<div id="indesigngraph" class="barclosed creativebar">
-								<div class="creativebartext">
-									InDesign
+						<div class="technicalbarcontain">
+							<div id="gitbar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									Git
 								</div>
 							</div>
 						</div>
-						<div class="barcontain">
-							<div id="lucidgraph" class="barclosed creativebar">
-								<div class="creativebartext">
-									Lucid Charts
+						<div class="technicalbarcontain">
+							<div id="lessbar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									LESS/SASS
 								</div>
 							</div>
 						</div>
-						<div class="barcontain">
-							<div id="balsamiqgraph" class="barclosed creativebar">
-								<div class="creativebartext">
-									Balsamiq
+						<div class="technicalbarcontain">
+							<div id="angularbar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									Angular
 								</div>
 							</div>
 						</div>
-						<div class="barcontain">
-							<div id="sketchgraph" class="barclosed creativebar">
-								<div class="creativebartext">
-									Sketch 3
+						<div class="technicalbarcontain">
+							<div id="javascriptbar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									Javascript
 								</div>
 							</div>
 						</div>
-						<div  class="barcontain">
-							<div id="illustratorgraph" class="barclosed creativebar">
-								<div class="creativebartext">
-									Illustrator
+						<div  class="technicalbarcontain">
+							<div id="jquerybar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									JQuery
 								</div>
 							</div>
 						</div>
-						<div class="barcontain">
-							<div id="photoshopgraph" class="barclosed creativebar">
-								<div class="creativebartext">
-									Photoshop
+						<div  class="technicalbarcontain">
+							<div id="bootstrapbar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									Bootstrap
+								</div>
+							</div>
+						</div>
+						<div class="technicalbarcontain">
+							<div id="cssbar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									CSS
+								</div>
+							</div>
+						</div>
+						<div class="technicalbarcontain">
+							<div id="htmlbar" class="technicalbarclosed technicalbar">
+								<div class="technicalbartext">
+									HTML
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div id="graphbottom"></div>
+			<div id="technicalgraphbottom"></div>
 		</div>
-	</div>
-	<div class="row">
-		<div id="creativex" class="xtext">
-			Experience Level
-		</div>
-	</div>
-	<div class="row" id="technicalskills">
-		<div class="col-sm-2 col-sm-offset-1">
-			<div id="technicalxy" class="ytext">
-				Technical Skills
-			</div>
-		</div>
-		<div id="technicalskillcontain" class="col-sm-6 padding0">
-			<div id="technicalcirlcecontain">
-				<div class="row">
-					<div class="skillrow3">
-						<div id="html" class="skillcircle">
-						</div>
-						<div id="css" class="skillcircle">
-						</div>
-						<div id="bootstrap" class="skillcircle">
-						</div>
-						<div id="javascript" class="skillcircle">
-						</div>
-						<div id="jquery" class="skillcircle">
-						</div>
-					</div>
-				</div>
-			<div class="row">
-				<div class="skillrow4">
-					<div id="less" class="skillcircle">
-					</div>
-					<div id="docker" class="skillcircle">
-					</div>
-					<div id="git" class="skillcircle">
-					</div>
-					<div id="angular" class="skillcircle">
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="technicalgraph">
-			<div class="row">
-				<div class="col-sm-12 padding0">
-					<div class="barcontain">
-						<div id="invisiongraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								Docker
-							</div>
-						</div>
-					</div>
-					<div class="barcontain">
-						<div id="indesigngraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								Git
-							</div>
-						</div>
-					</div>
-					<div class="barcontain">
-						<div id="lucidgraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								LESS/SASS
-							</div>
-						</div>
-					</div>
-					<div class="barcontain">
-						<div id="balsamiqgraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								Angular
-							</div>
-						</div>
-					</div>
-					<div class="barcontain">
-						<div id="sketchgraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								Javascript
-							</div>
-						</div>
-					</div>
-					<div  class="barcontain">
-						<div id="illustratorgraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								JQuery
-							</div>
-						</div>
-					</div>
-					<div  class="barcontain">
-						<div id="illustratorgraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								Bootstrap
-							</div>
-						</div>
-					</div>
-					<div class="barcontain">
-						<div id="photoshopgraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								CSS
-							</div>
-						</div>
-					</div>
-					<div class="barcontain">
-						<div id="photoshopgraph" class="technicalbarclosed technicalbar">
-							<div class="technicalbartext">
-								HTML
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="technicalgraphbottom"></div>
 	</div>
 </div>
 <div class="row">
 	<div id="technicalx" class="xtext">
 		Experience Level
+	</div>
+</div>
+<div class="skillctahold row">
+	<div ng-click="skills = !skills; philosophy = !philosophy; uxOpen();" class="maincta">
+		CONTINUE
+	</div>
+	</div>
+	<div class="ctalabel">
+		Next: UX Philosophy
+	</div>
+</div>
+<!--PHILOSOPHY -->
+<div id="philosophy" ng-class="{'row': philosophy, 'removesection': !philosophy}">
+	<div class="row">
+		<div class="headerunderline">
+			<h1>
+				UX Philosophy
+			</h1>
+		</div>
+	</div>
+	<div class="col-sm-8 col-sm-offset-2">
+		<div class="philosophy-text">
+			I believe in making data driven decisions when it comes to optimizing the user experience. My strong understanding of Google Analytics, Inspectlet, Zendesk, Segment.io and various heat/click map applications  allows me to track user trends and establish key metrics for the product at hand. To truly optimize the utilization of Google Analytics, I employ Javascript to send customized Google Analytics click events to track important actions, measure response time between each action, and identify action combinations that the users are making. This method allows me, as a designer and developer, to collect key data used to dictate future designs as well as create strategic and targeted A/B testing. I directly interact with users who experience problems or have questions through Zendesk and pinpoint specific problem areas in which I can assist by viewing videos of each individual&#39;s session with Inspectlet. <br><br>
+			These tactics not only help improve the product but allow me to support my decisions with data. I&#39;ve found that collecting meaningful data helps streamline the design process from inception to completion, making the team and myself stronger and more efficient. <br><br>
+			Feel free to contact me and ask me about my data collecting techniques.
+		</div>
+	<div class="mainctahold row">
+		<div ng-click="philosophy = !philosophy; examples = !examples; examplesOpen();" class="maincta">
+			CONTINUE
+		</div>
+	</div>
+	<div class="ctalabel">
+		Next: Work Examples
+	</div>
+	</div>
+</div>
+<div id="examples" ng-class="{'row': examples, 'removesection': !examples}">
+	<div class="row">
+		<div class="headerunderline">
+			<h1>
+				Work Examples
+			</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-8 col-sm-offset-2">
+			<div class="examples-text">
+				Notable recent accomplisments:
+			</div>
+			<div class="col-sm-10 col-sm-offset-1">
+				<div class="pexamples-text">
+					<li>
+						Planned, designed and developed mobile phlebotomy application currently being used by 40+ phlebotomists nation wide.
+					</li>
+					<li>
+						Planned, designed and developed an extensive sign up process for users to sign up for clinical trials.
+					</li> 
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+			<div class="col-sm-4">
+				<div id="wireframing" ng-click="wireframeView = !wireframeVew; viewOpen();" class="examplehold"></div>
+			</div>
+			<div class="col-sm-4">
+				<div id="analytics" ng-click="mockupView = !mockupView; viewOpen();"   class="examplehold"></div>
+			</div>
+			<div class="col-sm-4">
+				<div id="finished" ng-click="finishedView = !finishedView; viewOpen();"  class="examplehold"></div>
+			</div>
+		</div>
+</div>
+<div class="row" id="workexamples">
+	<div id="viewingrow">
+		<div class="col-xs-2">
+			<div id="leftarrow"></div>
+		</div>
+		<div class="col-xs-8">
+			<div class="viewingwork">
+				<div class="row workcontenthold" ng-if="wireframeView = true;" id="wireframingwork">
+					<div class="row workimages" id="balamiqwork">
+						<div class="row imagehold" id="balsamiqworkimage"></div>
+						<div class="row imagetext">
+							Initial Balsamiq Wireframe Example.
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="lucidchart1">
+						<div class="row imagehold" id="lucidchart1image"></div>
+						<div class="row imagetext"></div>
+					</div>
+					<div class="row workimages workimageshide" id="lucidchart2">
+						<div class="row imagehold" id="lucidchart2image"></div>
+						<div class="row imagetext"></div>
+					</div>
+				</div>
+				<div class="row workcontenthold" ng-if="mockupView = true;" id="mockups">
+					<div id="balamiqwork"></div>
+					<div id="lucidchart1"></div>
+					<div id="lucidchart2"></div>
+				</div>
+				<div ng-if="finishedView = true;" id="finished">
+					<div id="balamiqwork"></div>
+					<div id="lucidchart1"></div>
+					<div id="lucidchart2"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-2">
+			<div ng-click="nextImage();" id="rightarrow"></div>
+		</div>
 	</div>
 </div>

@@ -115,17 +115,9 @@ button{
 	letter-spacing: .5px;
 }
 .mainctahold{
-	margin-top: 9%;
+	margin-top: 7%;
 }
-.removesection{
-	top: -1000px !important;
-	opacity: 0 !important;
-	-webkit-transition: all 600ms ease;
-	-moz-transition: all 600ms ease;
-	-o-transition: all 600ms ease;
-	-ms-transition: all 600ms ease;
-	transition: all 600ms ease;
-}
+
 .ctalabel {
 	width: 100%;
 	text-align: center;
@@ -261,6 +253,178 @@ button{
 #about{
 	margin-top: 50px;
 }
+/*EXAMPLES*/
+#examples {
+	position: absolute;
+	top:600px;
+	display: none;
+	width: 100%;
+	color: #fff;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+.examples-text {
+	font-family: ssp;
+	font-size: 21px;
+	color: #FFFFFF;
+	line-height: 19px;
+	margin-top: 30px;
+	letter-spacing: .6px;
+}
+.pexamples-text {
+	font-family: ssp;
+	font-size: 17px;
+	color: #FFFFFF;
+	line-height: 19px;
+	margin-top: 23px;
+	margin-bottom: 35px;
+	letter-spacing: .6px;
+}
+.pexamples-text li {
+    list-style-type: disc;
+    list-style-position: inside;
+    text-indent: -1em;
+    padding-left: 1em;
+}
+.examplehold{
+	margin-left: auto;
+	margin-right: auto;
+	height: 150px;
+	width: 150px;
+	cursor: pointer;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#wireframing{
+	float: right;
+	background-image: url('../images/wireframing.svg');
+}
+#analytics{
+	background-image: url('../images/analyticsplan.svg');
+}
+#finished{
+	float: left;
+	background-image: url('../images/finished.svg');
+}
+.viewingwork{
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+}
+#viewingrow{
+	background: rgba(0,0,0,0.70);
+	width: 100%;
+	height: 438px;
+	margin-top:100px;
+}
+.workcontenthold{
+	width: 100%;
+	margin-top: 20px;
+}
+.imagetext{
+	font-family: ssp;
+	font-style: italic;;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 20px;
+	color: #fff;
+}
+#leftarrow{
+	height: 50px;
+	width: 50px;
+	background-position: center;
+	background-size: contain;
+	background-image: url('../images/leftarrownobkg.svg');
+	margin-top: 144px;
+	margin-right: auto;
+	margin-left: auto;
+	cursor: pointer;
+}
+#rightarrow{
+	height: 50px;
+	width: 50px;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url('../images/rightarrownobkg.svg');
+	margin-top: 144px;
+	margin-right: auto;
+	margin-left: auto;
+	cursor: pointer;
+}
+.workimages{
+	height: 500px;
+	width:100%;
+	right: inherit;
+	left:inherit;
+	opacity: 1;
+	position: absolute;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.imagehold{
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.workimageshide{
+	left:2000px;
+	opacity: 0;
+}
+.skillctahold{
+	margin-top: 40px;
+}
+#balsamiqworkimage{
+	background-image: url('../images/balsamiq.png');
+	height: 256px;
+  	margin-top: 22px;
+}
+#lucidchart1image{
+	background-image: url('../images/lucidcharts.png');
+	height: 340px;
+ 	margin-top: 22px;
+}
+}
+#lucidchart2image{
+	background-image: url('../images/lucidcharts2.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+/*PHILOSOPHY*/
+#philosophy {
+	position: absolute;
+	top:600px;
+	display: none;
+	width: 100%;
+	color: #fff;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+.headerunderline {
+	border-bottom: 4px solid #F0B928;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 266px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.philosophy-text {
+	font-family: ssp;
+	font-size: 17px;
+	color: #FFFFFF;
+	line-height: 19px;
+	text-align: justify;
+	margin-top: 35px;
+	letter-spacing: .6px;
+}
 /*SKILLS*/
 #skillcontain{
 	margin-top: 45px;
@@ -269,6 +433,9 @@ button{
 #technicalskillcontain{
 	margin-top: 45px;
 	padding-left: 0px;
+}
+#technicalskills{
+	display: none;
 }
 #skills {
 	position: absolute;
@@ -294,11 +461,23 @@ button{
 	float: left;
 	width: auto;
 	cursor: pointer;
+	width: 175px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	transition: all 200ms ease;
 }
 #creative{
 	float: right;
 	width: auto;
 	cursor: pointer;
+	width: 155px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	transition: all 200ms ease;
 }
 #lucid {
 	padding-top: 25px;
@@ -427,7 +606,7 @@ button{
 	transition: all 200ms ease;
 }
 .technicalbarclosed{
-	height:20px;
+	height:23px;
 	width: 0%!important;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
@@ -437,7 +616,7 @@ button{
 }
 .technicalgraphholder {
   border-left: 3px solid #FFF;
-  height: 317px;
+  height: 300px;
   -webkit-transition: all 600ms ease;
   -moz-transition: all 600ms ease;
   -o-transition: all 600ms ease;
@@ -455,8 +634,8 @@ button{
 
 }
 .technicalbar{
-	height: 27px;
-  	padding-top: 2px;
+	height: 23px;
+  	padding-top: 0px;
 	-webkit-transition: all 200ms ease;
 	-moz-transition: all 200ms ease;
 	-o-transition: all 200ms ease;
@@ -528,11 +707,127 @@ button{
 	-ms-transition: all 600ms ease;
 	transition: all 600ms ease;
 }
+#illustratorgraph{
+	width: 91%;
+	background-color: #129DDC;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#sketchgraph{
+	width:82%;
+	background-color: #28A5DE;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#photoshopgraph{
+	width: 98%;
+	background-color: #0496D7;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+/*TECHBARS*/
+#dockerbar{
+	width:50%;
+	background-color: #71F0A8;
+	
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#gitbar{
+	width: 60%;
+	background-color: #4EF596;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#lessbar{
+	width: 67%;
+	background-color: #2BE47B;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#angularbar{
+	width: 70%;
+	background-color: #1AD069;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#javascriptbar{
+	width: 77%;
+	background-color: #0ACB5E;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#jquerybar{
+	width: 83%;
+	background-color: #08BC56;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#bootstrapbar{
+	width:87%;
+	background-color: #08B251;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#cssbar{
+	width: 94%;
+	background-color: #089A47;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#htmlbar{
+	width: 98%;
+	background-color: #06853D;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
 .barcontain{
 	width:100%;
 	float: left;
 	height: auto;
 	margin-bottom:5px;
+}
+.technicalbarcontain{
+	width:100%;
+	float: left;
+	height: auto;
+	margin-bottom:3px;
 }
 .creativebartext {
 	color: #fff;
@@ -679,6 +974,24 @@ button{
 }
 .hidden {
 
+}
+.removesection{
+	top: -1000px !important;
+	opacity: 0 !important;
+	-webkit-transition: all 600ms ease;
+	-moz-transition: all 600ms ease;
+	-o-transition: all 600ms ease;
+	-ms-transition: all 600ms ease;
+	transition: all 600ms ease;
+}
+#workexamples{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	height:100%;
+	background: rgba(0,0,0,0.46);
+	display: none;
+	/* Rectangle 34: */
 }
 @media screen and (max-width: 768px) {
 
