@@ -379,6 +379,15 @@ button{
 .skillctahold{
 	margin-top: 40px;
 }
+.wholeskillcontain {
+	height: auto;
+	min-height: 284px;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
 #balsamiqworkimage{
 	background-image: url('../images/balsamiq.png');
 	height: 256px;
@@ -389,7 +398,7 @@ button{
 	height: 340px;
  	margin-top: 22px;
 }
-}
+
 #lucidchart2image{
 	background-image: url('../images/lucidcharts2.png');
 	height: 340px;

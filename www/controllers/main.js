@@ -13,7 +13,7 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 	$scope.wireframeView = false;
 	$scope.mockupView = false;
 	$scope.finishedView = false;
-	$scope.wireframeimage1 = false;
+	$scope.wireframeimage1 = true;
 	$scope.wireframeimage2 = false;
 	$scope.wireframeimage3 = false;
 	$scope.wireframeimage3 = false;
@@ -333,7 +333,7 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 		$('#workexamples').fadeIn(300);
 	}
 	$scope.nextImage = function(){
-		if($scope.wireframeimage1 = true){
+		if ($scope.wireframeimage1 === true){
 			$('#balamiqwork').animate({
 			    opacity: 0,
 			    left: "-=2000",
@@ -344,44 +344,9 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 			  });
 				$scope.wireframeimage1 = false;
 				$scope.wireframeimage2 = true;
+				console.log('first' , $scope.wireframeimage1, 'image1');
 		}
-		
-		
-		else if($scope.wireframeimage4 = true){
-			$('#workexamples').fadeOut(300, function(){
-				$('#lucidchart2').animate({
-			    opacity: 0,
-			    left: "+=4000",
-				});
-				$('#wireframecopy').animate({
-				    opacity: 1,
-				    left: "+=2000",
-				});
-				$('#balamiqwork').animate({
-				    opacity: 0,
-				    left: "+=2000",
-				  });
-				$('#lucidchart1').animate({
-				    opacity: 1,
-				    left: "+=4000",
-				  });
-					$scope.wireframeimage4 = false;
-					$scope.wireframeView = false;
-			});
-		}
-		else if($scope.wireframeimage3 = true){
-			$('#lucidchart2').animate({
-			    opacity: 0,
-			    left: "-=2000",
-			  });
-			$('#wireframecopy').animate({
-			    opacity: 1,
-			    left: "-=2000",
-			  });
-				$scope.wireframeimage3 = false;
-				$scope.wireframeimage4 = true;
-		}
-		else if($scope.wireframeimage2 = true){
+		else if($scope.wireframeimage2 === true){
 			$('#lucidchart1').animate({
 			    opacity: 0,
 			    left: "-=2000",
@@ -392,6 +357,85 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 			  });
 				$scope.wireframeimage2 = false;
 				$scope.wireframeimage3 = true;
+				console.log('second');
+		}
+		else if($scope.wireframeimage3 === true){
+			$('#lucidchart2').animate({
+			    opacity: 0,
+			    left: "-=2000",
+			  });
+			$('#wireframecopy').animate({
+			    opacity: 1,
+			    left: "-=2000",
+			  });
+				$scope.wireframeimage3 = false;
+				$scope.wireframeimage4 = true;
+				console.log('third');
+		}
+		else if($scope.wireframeimage4 === true){
+			$scope.wireframeView = false;
+			$('#workexamples').fadeOut(300, function(){
+				$('#lucidchart2').animate({
+			    opacity: 0,
+			    left: "+=4000",
+				});
+				$('#wireframecopy').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				});
+				$('#balamiqwork').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#lucidchart1').animate({
+				    opacity: 0,
+				    left: "+=4000",
+				  });
+					$scope.wireframeimage4 = false;
+					$scope.wireframeimage1 = true;
+					console.log('close');
+			});
+		}
+	}
+	$scope.prevImage = function(){
+		if ($scope.wireframeimage2 === true){
+			$('#balamiqwork').animate({
+			    opacity: 1,
+			    left: "+=2000",
+			  });
+			$('#lucidchart1').animate({
+			    opacity: 0,
+			    left: "+=2000",
+			  });
+				$scope.wireframeimage1 = true;
+				$scope.wireframeimage2 = false;
+				console.log('first' , $scope.wireframeimage1, 'image1');
+		}
+		else if($scope.wireframeimage3 === true){
+			$('#lucidchart1').animate({
+			    opacity: 1,
+			    left: "+=2000",
+			  });
+			$('#lucidchart2').animate({
+			    opacity: 0,
+			    left: "+=2000",
+			  });
+				$scope.wireframeimage2 = true;
+				$scope.wireframeimage3 = false;
+				console.log('second');
+		}
+		else if($scope.wireframeimage4 === true){
+			$('#lucidchart2').animate({
+			    opacity: 1,
+			    left: "+=2000",
+			  });
+			$('#wireframecopy').animate({
+			    opacity: 0,
+			    left: "+=2000",
+			  });
+				$scope.wireframeimage3 = true;
+				$scope.wireframeimage4 = false;
+				console.log('third');
 		}
 	}
 	
