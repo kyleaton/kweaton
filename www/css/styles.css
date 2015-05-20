@@ -316,22 +316,21 @@ button{
 	width: 100%;
 }
 #viewingrow{
-	background: rgba(0,0,0,0.70);
+	background: rgba(0,0,0,0.81);
 	width: 100%;
-	height: 438px;
-	margin-top:100px;
+	height: 530px;
+	margin-top:65px;
 }
 .workcontenthold{
 	width: 100%;
 	margin-top: 20px;
 }
-.imagetext{
-	font-family: ssp;
-	font-style: italic;;
-	font-size: 20px;
-	text-align: center;
-	margin-top: 20px;
-	color: #fff;
+.imagetext {
+	  font-family: ssp;
+	  font-size: 18px;
+	  text-align: center;
+	  margin-top: 10px;
+	  color: #fff;
 }
 #leftarrow{
 	height: 50px;
@@ -401,6 +400,59 @@ button{
 
 #lucidchart2image{
 	background-image: url('../images/lucidcharts2.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+/*MOCKUPIMAGES*/
+#communication1{
+	background-image: url('../images/communication1.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+#communication2{
+	background-image: url('../images/communication2.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+#communication3{
+	background-image: url('../images/communication3.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+#mockupdesktop{
+	background-image: url('../images/portaldesktopNew.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+#mockup2{
+	background-image: url('../images/portalmenuMobile.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+#analyticsimage1{
+	background-image: url('../images/DonateDesktopAnalytics_High.jpg');
+	height: 340px;
+  	margin-top: 22px;
+}
+#analyticsimage2{
+	background-image: url('../images/Analytics_low.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+#analyticsimage3{
+	background-image: url('../images/DonateMobileAnalytics.jpg');
+	height: 340px;
+  	margin-top: 22px;
+  	background-size: 17%;
+  	background-position: top center;
+}
+#analyticsreport1{
+	background-image: url('../images/docDashboardExplanation.png');
+	height: 340px;
+  	margin-top: 22px;
+}
+#analyticsreport2{
+	background-image: url('../images/DocGoogleDevelopmentLow.png');
 	height: 340px;
   	margin-top: 22px;
 }

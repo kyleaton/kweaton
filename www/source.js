@@ -34,6 +34,16 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 	$scope.wireframeimage2 = false;
 	$scope.wireframeimage3 = false;
 	$scope.wireframeimage3 = false;
+	$scope.mockupimage1 = true;
+	$scope.mockupimage2 = false;
+	$scope.mockupimage3 = false;
+	$scope.mockupimage4 = false;
+	$scope.mockupimage5 = false;
+	$scope.mockupimage6 = false;
+	$scope.mockupimage7 = false;
+	$scope.mockupimage8 = false;
+	$scope.mockupimage9 = false;
+	$scope.mockupimage10 = false;
 
 
 	$scope.skillOpen = function(){
@@ -350,109 +360,399 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 		$('#workexamples').fadeIn(300);
 	}
 	$scope.nextImage = function(){
-		if ($scope.wireframeimage1 === true){
-			$('#balamiqwork').animate({
-			    opacity: 0,
-			    left: "-=2000",
-			  });
-			$('#lucidchart1').animate({
-			    opacity: 1,
-			    left: "-=2000",
-			  });
-				$scope.wireframeimage1 = false;
-				$scope.wireframeimage2 = true;
-				console.log('first' , $scope.wireframeimage1, 'image1');
-		}
-		else if($scope.wireframeimage2 === true){
-			$('#lucidchart1').animate({
-			    opacity: 0,
-			    left: "-=2000",
-			  });
-			$('#lucidchart2').animate({
-			    opacity: 1,
-			    left: "-=2000",
-			  });
-				$scope.wireframeimage2 = false;
-				$scope.wireframeimage3 = true;
-				console.log('second');
-		}
-		else if($scope.wireframeimage3 === true){
-			$('#lucidchart2').animate({
-			    opacity: 0,
-			    left: "-=2000",
-			  });
-			$('#wireframecopy').animate({
-			    opacity: 1,
-			    left: "-=2000",
-			  });
-				$scope.wireframeimage3 = false;
-				$scope.wireframeimage4 = true;
-				console.log('third');
-		}
-		else if($scope.wireframeimage4 === true){
-			$scope.wireframeView = false;
-			$('#workexamples').fadeOut(300, function(){
-				$('#lucidchart2').animate({
-			    opacity: 0,
-			    left: "+=4000",
-				});
-				$('#wireframecopy').animate({
+		if($scope.wireframeView === true){
+			if ($scope.wireframeimage1 === true){
+				$('#balamiqwork').animate({
 				    opacity: 0,
-				    left: "+=2000",
+				    left: "-=2000",
+				  });
+				$('#lucidchart1').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.wireframeimage1 = false;
+					$scope.wireframeimage2 = true;
+					console.log('first' , $scope.wireframeimage1, 'image1');
+			}
+			else if($scope.wireframeimage2 === true){
+				$('#lucidchart1').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#lucidchart2').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.wireframeimage2 = false;
+					$scope.wireframeimage3 = true;
+					console.log('second');
+			}
+			else if($scope.wireframeimage3 === true){
+				$('#lucidchart2').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#wireframecopy').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.wireframeimage3 = false;
+					$scope.wireframeimage4 = true;
+					console.log('third');
+			}
+			else if($scope.wireframeimage4 === true){
+				$scope.wireframeView = false;
+				$('#workexamples').fadeOut(300, function(){
+					$('#lucidchart2').animate({
+				    opacity: 0,
+				    left: "+=4000",
+					});
+					$('#wireframecopy').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#balamiqwork').animate({
+					    opacity: 1,
+					    left: "+=2000",
+					  });
+					$('#lucidchart1').animate({
+					    opacity: 0,
+					    left: "+=4000",
+					  });
+						$scope.wireframeimage4 = false;
+						$scope.wireframeimage1 = true;
+						console.log('close');
 				});
+			}
+		}
+		else if($scope.mockupView === true){
+			if ($scope.mockupimage1 === true){
+				$('#communicationa').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#communicationb').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage1 = false;
+					$scope.mockupimage2 = true;
+					console.log('first' , $scope.mockupimage1, 'image1');
+			}
+			else if($scope.mockupimage2 === true){
+				$('#communicationb').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#communicationc').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage2 = false;
+					$scope.mockupimage3 = true;
+					console.log('second');
+			}
+			else if($scope.mockupimage3 === true){
+				$('#communicationc').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#mockupa').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage3 = false;
+					$scope.mockupimage4 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage4 === true){
+				$('#mockupa').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#mockupb').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage4 = false;
+					$scope.mockupimage5 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage5 === true){
+				$('#mockupb').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#analyticsa').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage5 = false;
+					$scope.mockupimage6 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage6 === true){
+				$('#analyticsa').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#analyticsb').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage6 = false;
+					$scope.mockupimage7 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage7 === true){
+				$('#analyticsb').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#analyticsc').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage7 = false;
+					$scope.mockupimage8 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage8 === true){
+				$('#analyticsc').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#reporta').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage8 = false;
+					$scope.mockupimage9 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage9 === true){
+				$('#reporta').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#reportb').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage9 = false;
+					$scope.mockupimage10 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage10 === true){
+				$scope.mockupView = false;
+				$('#workexamples').fadeOut(300, function(){
+					$('#communicationc').animate({
+				    opacity: 0,
+				    left: "+=4000",
+					});
+					$('#mockupa').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#mockupb').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#analyticsa').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#analyticsb').animate({
+					    opacity: 0,
+					     left: "+=2000",
+					});
+					$('#analyticsc').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#reporta').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					}); 
+					$('#reportb').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#communicationa').animate({
+					    opacity: 1,
+					    left: "+=2000",
+					});
+					$('#communicationb').animate({
+					    opacity: 0,
+					    left: "+=4000",
+					  });
+						$scope.mockupimage10 = false;
+						$scope.mockupimage1 = true;
+						console.log('close');
+				});
+			}
+		}
+	}
+	$scope.prevImage = function(){
+		if($scope.wireframeView === true){
+			if ($scope.wireframeimage2 === true){
 				$('#balamiqwork').animate({
 				    opacity: 1,
 				    left: "+=2000",
 				  });
 				$('#lucidchart1').animate({
 				    opacity: 0,
-				    left: "+=4000",
+				    left: "+=2000",
 				  });
-					$scope.wireframeimage4 = false;
 					$scope.wireframeimage1 = true;
-					console.log('close');
-			});
+					$scope.wireframeimage2 = false;
+					console.log('first' , $scope.wireframeimage1, 'image1');
+			}
+			else if($scope.wireframeimage3 === true){
+				$('#lucidchart1').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#lucidchart2').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.wireframeimage2 = true;
+					$scope.wireframeimage3 = false;
+					console.log('second');
+			}
+			else if($scope.wireframeimage4 === true){
+				$('#lucidchart2').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#wireframecopy').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.wireframeimage3 = true;
+					$scope.wireframeimage4 = false;
+					console.log('third');
+			}
 		}
-	}
-	$scope.prevImage = function(){
-		if ($scope.wireframeimage2 === true){
-			$('#balamiqwork').animate({
-			    opacity: 1,
-			    left: "+=2000",
-			  });
-			$('#lucidchart1').animate({
-			    opacity: 0,
-			    left: "+=2000",
-			  });
-				$scope.wireframeimage1 = true;
-				$scope.wireframeimage2 = false;
-				console.log('first' , $scope.wireframeimage1, 'image1');
-		}
-		else if($scope.wireframeimage3 === true){
-			$('#lucidchart1').animate({
-			    opacity: 1,
-			    left: "+=2000",
-			  });
-			$('#lucidchart2').animate({
-			    opacity: 0,
-			    left: "+=2000",
-			  });
-				$scope.wireframeimage2 = true;
-				$scope.wireframeimage3 = false;
-				console.log('second');
-		}
-		else if($scope.wireframeimage4 === true){
-			$('#lucidchart2').animate({
-			    opacity: 1,
-			    left: "+=2000",
-			  });
-			$('#wireframecopy').animate({
-			    opacity: 0,
-			    left: "+=2000",
-			  });
-				$scope.wireframeimage3 = true;
-				$scope.wireframeimage4 = false;
-				console.log('third');
+		else if($scope.mockupView === true){
+			if($scope.mockupimage2 === true){
+				$('#communicationa').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#communicationb').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage1 = true;
+					$scope.mockupimage2 = false;
+					console.log('second');
+			}
+			else if($scope.mockupimage3 === true){
+				$('#communicationb').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#communicationc').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage2 = true;
+					$scope.mockupimage3 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage4 === true){
+				$('#communicationc').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#mockupa').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage3 = true;
+					$scope.mockupimage4 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage5 === true){
+				$('#mockupa').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#mockupb').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage4 = true;
+					$scope.mockupimage5 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage6 === true){
+				$('#mockupb').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#analyticsa').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage5 = true;
+					$scope.mockupimage6 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage7 === true){
+				$('#analyticsa').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#analyticsb').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage6 =true;
+					$scope.mockupimage7 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage8 === true){
+				$('#analyticsb').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#analyticsc').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage7 = true;
+					$scope.mockupimage8 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage9 === true){
+				$('#analyticsc').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#reporta').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage8 = true;
+					$scope.mockupimage9 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage10 === true){
+				$('#analyticsb').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#reportc').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage9 = true;
+					$scope.mockupimage10 = false;
+					console.log('third');
+			}
 		}
 	}
 	
@@ -27769,7 +28069,7 @@ var styleDirective = valueFn({
 
 module.exports = function($routeProvider, $locationProvider) {
 	$routeProvider.
-		when('/', {template: "<div class=\"aboutsection\" ng-class=\"{'aboutsection': intro, 'aboutsection removesection': !intro}\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"intro = !intro; skills = !skills; skillOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Technical and Creative Skills\n\t</div>\n</div>\n<!-- Skills -->\n<div class=\"row \" id=\"skills\" ng-class=\"{'row': skills, 'removesection': !skills}\">\n\t<div class=\"row skills\">\n\t\t<div class=\"col-sm-5\">\n\t\t\t<div ng-click=\"creativeOpen();\" ng-class=\"{'selected': creative, '':!creative}\" id=\"creative\">\n\t\t\t\t<h1>Creative</h1>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-sm-5 col-sm-offset-2\">\n\t\t\t<div ng-click=\"technicalOpen()\" id=\"technical\" ng-class=\"{'selected': technical, '':!technical}\">\n\t\t\t\t<h1>Technical</h1>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"wholeskillcontain\">\n\t\t<div class=\"row\" id=\"creativeskills\">\n\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t<div id=\"creativexy\" class=\"ytext\">\n\t\t\t\t\tCreative Skills\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"skillcontain\" class=\"col-sm-8 padding0\">\n\t\t\t\t<div id=\"creativecirlcecontain\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"skillrow1\">\n\t\t\t\t\t\t\t<div id=\"illustrator\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"sketch\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"photoshop\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"lucid\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\t\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"skillrow2\">\n\t\t\t\t\t\t\t<div id=\"balsamiq\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"invision\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"indesign\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div id=\"creativegraph\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-sm-12 padding0\">\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"invisiongraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tInvisionApp\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"indesigngraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tInDesign\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"lucidgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tLucid Charts\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"balsamiqgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tBalsamiq\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"sketchgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tSketch 3\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div  class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"illustratorgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tIllustrator\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"photoshopgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tPhotoshop\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div id=\"graphbottom\"></div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div id=\"creativex\" class=\"xtext\">\n\t\t\t\tExperience Level\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\" id=\"technicalskills\">\n\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t<div id=\"technicalxy\" class=\"ytext\">\n\t\t\t\t\tTechnical Skills\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"technicalskillcontain\" class=\"col-sm-8 padding0\">\n\t\t\t\t<div id=\"technicalcirlcecontain\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"skillrow3\">\n\t\t\t\t\t\t\t<div id=\"html\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"css\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"bootstrap\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"javascript\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"jquery\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"skillrow4\">\n\t\t\t\t\t\t<div id=\"less\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"docker\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"git\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"angular\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"technicalgraph\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-12 padding0\">\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"dockerbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tDocker\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"gitbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tGit\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"lessbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tLESS/SASS\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"angularbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tAngular\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"javascriptbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tJavascript\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div  class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"jquerybar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tJQuery\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div  class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"bootstrapbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tBootstrap\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"cssbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tCSS\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"htmlbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tHTML\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"technicalgraphbottom\"></div>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div id=\"technicalx\" class=\"xtext\">\n\t\t\tExperience Level\n\t\t</div>\n\t</div>\n</div>\n<div class=\"skillctahold row\">\n\t<div ng-click=\"skills = !skills; philosophy = !philosophy; uxOpen();\" class=\"maincta\">\n\t\tCONTINUE\n\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: UX Philosophy\n\t</div>\n</div>\n<!--PHILOSOPHY -->\n<div id=\"philosophy\" ng-class=\"{'row': philosophy, 'removesection': !philosophy}\">\n\t<div class=\"row\">\n\t\t<div class=\"headerunderline\">\n\t\t\t<h1>\n\t\t\t\tUX Philosophy\n\t\t\t</h1>\n\t\t</div>\n\t</div>\n\t<div class=\"col-sm-8 col-sm-offset-2\">\n\t\t<div class=\"philosophy-text\">\n\t\t\tI believe in making data driven decisions when it comes to optimizing the user experience. My strong understanding of Google Analytics, Inspectlet, Zendesk, Segment.io and various heat/click map applications  allows me to track user trends and establish key metrics for the product at hand. To truly optimize the utilization of Google Analytics, I employ Javascript to send customized Google Analytics click events to track important actions, measure response time between each action, and identify action combinations that the users are making. This method allows me, as a designer and developer, to collect key data used to dictate future designs as well as create strategic and targeted A/B testing. I directly interact with users who experience problems or have questions through Zendesk and pinpoint specific problem areas in which I can assist by viewing videos of each individual&#39;s session with Inspectlet. <br><br>\n\t\t\tThese tactics not only help improve the product but allow me to support my decisions with data. I&#39;ve found that collecting meaningful data helps streamline the design process from inception to completion, making the team and myself stronger and more efficient. <br><br>\n\t\t\tFeel free to contact me and ask me about my data collecting techniques.\n\t\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"philosophy = !philosophy; examples = !examples; examplesOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Work Examples\n\t</div>\n\t</div>\n</div>\n<div id=\"examples\" ng-class=\"{'row': examples, 'removesection': !examples}\">\n\t<div class=\"row\">\n\t\t<div class=\"headerunderline\">\n\t\t\t<h1>\n\t\t\t\tWork Examples\n\t\t\t</h1>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"col-sm-8 col-sm-offset-2\">\n\t\t\t<div class=\"examples-text\">\n\t\t\t\tNotable recent accomplisments:\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-10 col-sm-offset-1\">\n\t\t\t\t<div class=\"pexamples-text\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\tPlanned, designed and developed mobile phlebotomy application currently being used by 40+ phlebotomists nation wide.\n\t\t\t\t\t</li>\n\t\t\t\t\t<li>\n\t\t\t\t\t\tPlanned, designed and developed an extensive sign up process for users to sign up for clinical trials.\n\t\t\t\t\t</li> \n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t<div id=\"wireframing\" ng-click=\"wireframeView = !wireframeVew; viewOpen();\" class=\"examplehold\"></div>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t<div id=\"analytics\" ng-click=\"mockupView = !mockupView; viewOpen();\"   class=\"examplehold\"></div>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t<div id=\"finished\" ng-click=\"finishedView = !finishedView; viewOpen();\"  class=\"examplehold\"></div>\n\t\t\t</div>\n\t\t</div>\n</div>\n<div class=\"row\" id=\"workexamples\">\n\t<div id=\"viewingrow\">\n\t\t<div class=\"col-xs-2\">\n\t\t\t<div id=\"leftarrow\" ng-click=\"prevImage();\"></div>\n\t\t</div>\n\t\t<div class=\"col-xs-8\">\n\t\t\t<div class=\"viewingwork\">\n\t\t\t\t<div class=\"row workcontenthold\" ng-if=\"wireframeView = true;\" id=\"wireframingwork\">\n\t\t\t\t\t<div class=\"row workimages\" id=\"balamiqwork\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"balsamiqworkimage\"></div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tInitial Balsamiq Wireframe Example.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"lucidchart1\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"lucidchart1image\"></div>\n\t\t\t\t\t\t<div class=\"row imagetext\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"lucidchart2\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"lucidchart2image\"></div>\n\t\t\t\t\t\t<div class=\"row imagetext\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row workcontenthold\" ng-if=\"mockupView = true;\" id=\"mockups\">\n\t\t\t\t\t<div id=\"balamiqwork\"></div>\n\t\t\t\t\t<div id=\"lucidchart1\"></div>\n\t\t\t\t\t<div id=\"lucidchart2\"></div>\n\t\t\t\t</div>\n\t\t\t\t<div ng-if=\"finishedView = true;\" id=\"finished\">\n\t\t\t\t\t<div id=\"balamiqwork\"></div>\n\t\t\t\t\t<div id=\"lucidchart1\"></div>\n\t\t\t\t\t<div id=\"lucidchart2\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-xs-2\">\n\t\t\t<div ng-click=\"nextImage();\" id=\"rightarrow\"></div>\n\t\t</div>\n\t</div>\n</div>\n", controller: 'MainCtrl'}).
+		when('/', {template: "<div class=\"aboutsection\" ng-class=\"{'aboutsection': intro, 'aboutsection removesection': !intro}\">\n\t<div class=\"row texthold\">\n\t\t<div class=\"col-sm-4\">\n\t\t\t<div class=\"bigme\"></div>\n\t\t</div>\n\t\t<div class=\"col-sm-6\">\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text1\" class=\"textcontain\">\n\t\t\t\t\tWelcome to my site. \n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text2\" class=\"textcontain\">\n\t\t\t\t\tI&#39;m a Front-End Developer, \n\t\t\t\t\tUI/UX Designer and Web Analytics Guru.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div class=\"row\">\n\t\t\t\t<div id=\"text3\" class=\"textcontain\">\n\t\t\t\t\tClick below to see my to learn more about me or click to menu button to skip to specific sections.\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"intro = !intro; skills = !skills; skillOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Technical and Creative Skills\n\t</div>\n</div>\n<!-- Skills -->\n<div class=\"row \" id=\"skills\" ng-class=\"{'row': skills, 'removesection': !skills}\">\n\t<div class=\"row skills\">\n\t\t<div class=\"col-sm-5\">\n\t\t\t<div ng-click=\"creativeOpen();\" ng-class=\"{'selected': creative, '':!creative}\" id=\"creative\">\n\t\t\t\t<h1>Creative</h1>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-sm-5 col-sm-offset-2\">\n\t\t\t<div ng-click=\"technicalOpen()\" id=\"technical\" ng-class=\"{'selected': technical, '':!technical}\">\n\t\t\t\t<h1>Technical</h1>\n\t\t\t</div>\n\t\t</div>\n\t</div>\n\t<div class=\"wholeskillcontain\">\n\t\t<div class=\"row\" id=\"creativeskills\">\n\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t<div id=\"creativexy\" class=\"ytext\">\n\t\t\t\t\tCreative Skills\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"skillcontain\" class=\"col-sm-8 padding0\">\n\t\t\t\t<div id=\"creativecirlcecontain\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"skillrow1\">\n\t\t\t\t\t\t\t<div id=\"illustrator\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"sketch\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"photoshop\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"lucid\" class=\"skillcircle creativeopen\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\t\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"skillrow2\">\n\t\t\t\t\t\t\t<div id=\"balsamiq\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"invision\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"indesign\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div id=\"creativegraph\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"col-sm-12 padding0\">\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"invisiongraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tInvisionApp\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"indesigngraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tInDesign\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"lucidgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tLucid Charts\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"balsamiqgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tBalsamiq\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"sketchgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tSketch 3\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div  class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"illustratorgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tIllustrator\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"barcontain\">\n\t\t\t\t\t\t\t\t<div id=\"photoshopgraph\" class=\"barclosed creativebar\">\n\t\t\t\t\t\t\t\t\t<div class=\"creativebartext\">\n\t\t\t\t\t\t\t\t\t\tPhotoshop\n\t\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div id=\"graphbottom\"></div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\">\n\t\t\t<div id=\"creativex\" class=\"xtext\">\n\t\t\t\tExperience Level\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"row\" id=\"technicalskills\">\n\t\t\t<div class=\"col-sm-2\">\n\t\t\t\t<div id=\"technicalxy\" class=\"ytext\">\n\t\t\t\t\tTechnical Skills\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"technicalskillcontain\" class=\"col-sm-8 padding0\">\n\t\t\t\t<div id=\"technicalcirlcecontain\">\n\t\t\t\t\t<div class=\"row\">\n\t\t\t\t\t\t<div class=\"skillrow3\">\n\t\t\t\t\t\t\t<div id=\"html\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"css\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"bootstrap\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"javascript\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t<div id=\"jquery\" class=\"skillcircle\">\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"skillrow4\">\n\t\t\t\t\t\t<div id=\"less\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"docker\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"git\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div id=\"angular\" class=\"skillcircle\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"technicalgraph\">\n\t\t\t\t<div class=\"row\">\n\t\t\t\t\t<div class=\"col-sm-12 padding0\">\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"dockerbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tDocker\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"gitbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tGit\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"lessbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tLESS/SASS\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"angularbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tAngular\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"javascriptbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tJavascript\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div  class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"jquerybar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tJQuery\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div  class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"bootstrapbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tBootstrap\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"cssbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tCSS\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technicalbarcontain\">\n\t\t\t\t\t\t\t<div id=\"htmlbar\" class=\"technicalbarclosed technicalbar\">\n\t\t\t\t\t\t\t\t<div class=\"technicalbartext\">\n\t\t\t\t\t\t\t\t\tHTML\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<div id=\"technicalgraphbottom\"></div>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div id=\"technicalx\" class=\"xtext\">\n\t\t\tExperience Level\n\t\t</div>\n\t</div>\n</div>\n<div class=\"skillctahold row\">\n\t<div ng-click=\"skills = !skills; philosophy = !philosophy; uxOpen();\" class=\"maincta\">\n\t\tCONTINUE\n\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: UX Philosophy\n\t</div>\n</div>\n<!--PHILOSOPHY -->\n<div id=\"philosophy\" ng-class=\"{'row': philosophy, 'removesection': !philosophy}\">\n\t<div class=\"row\">\n\t\t<div class=\"headerunderline\">\n\t\t\t<h1>\n\t\t\t\tUX Philosophy\n\t\t\t</h1>\n\t\t</div>\n\t</div>\n\t<div class=\"col-sm-8 col-sm-offset-2\">\n\t\t<div class=\"philosophy-text\">\n\t\t\tI believe in making data driven decisions when it comes to optimizing the user experience. My strong understanding of Google Analytics, Inspectlet, Zendesk, Segment.io and various heat/click map applications  allows me to track user trends and establish key metrics for the product at hand. To truly optimize the utilization of Google Analytics, I employ Javascript to send customized Google Analytics click events to track important actions, measure response time between each action, and identify action combinations that the users are making. This method allows me, as a designer and developer, to collect key data used to dictate future designs as well as create strategic and targeted A/B testing. I directly interact with users who experience problems or have questions through Zendesk and pinpoint specific problem areas in which I can assist by viewing videos of each individual&#39;s session with Inspectlet. <br><br>\n\t\t\tThese tactics not only help improve the product but allow me to support my decisions with data. I&#39;ve found that collecting meaningful data helps streamline the design process from inception to completion, making the team and myself stronger and more efficient. <br><br>\n\t\t\tFeel free to contact me and ask me about my data collecting techniques.\n\t\t</div>\n\t<div class=\"mainctahold row\">\n\t\t<div ng-click=\"philosophy = !philosophy; examples = !examples; examplesOpen();\" class=\"maincta\">\n\t\t\tCONTINUE\n\t\t</div>\n\t</div>\n\t<div class=\"ctalabel\">\n\t\tNext: Work Examples\n\t</div>\n\t</div>\n</div>\n<div id=\"examples\" ng-class=\"{'row': examples, 'removesection': !examples}\">\n\t<div class=\"row\">\n\t\t<div class=\"headerunderline\">\n\t\t\t<h1>\n\t\t\t\tWork Examples\n\t\t\t</h1>\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t<div class=\"col-sm-8 col-sm-offset-2\">\n\t\t\t<div class=\"examples-text\">\n\t\t\t\tNotable recent accomplisments:\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-10 col-sm-offset-1\">\n\t\t\t\t<div class=\"pexamples-text\">\n\t\t\t\t\t<li>\n\t\t\t\t\t\tPlanned, designed and developed mobile phlebotomy application currently being used by 40+ phlebotomists nation wide.\n\t\t\t\t\t</li>\n\t\t\t\t\t<li>\n\t\t\t\t\t\tPlanned, designed and developed an extensive sign up process for users to sign up for clinical trials.\n\t\t\t\t\t</li> \n\t\t\t\t</div>\n\t\t\t</div>\t\n\t\t</div>\n\t</div>\n\t<div class=\"row\">\n\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t<div id=\"wireframing\" ng-click=\"wireframeView = !wireframeView; viewOpen();\" class=\"examplehold\"></div>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t<div id=\"analytics\" ng-click=\"mockupView = !mockupView; viewOpen();\"   class=\"examplehold\"></div>\n\t\t\t</div>\n\t\t\t<div class=\"col-sm-4\">\n\t\t\t\t<div id=\"finished\" ng-click=\"finishedView = !finishedView; viewOpen();\"  class=\"examplehold\"></div>\n\t\t\t</div>\n\t\t</div>\n</div>\n<div class=\"row\" id=\"workexamples\">\n\t<div id=\"viewingrow\">\n\t\t<div class=\"col-xs-2\">\n\t\t\t<div id=\"leftarrow\" ng-click=\"prevImage();\"></div>\n\t\t</div>\n\t\t<div class=\"col-xs-8\">\n\t\t\t<div class=\"viewingwork\">\n\t\t\t\t<div class=\"row workcontenthold\" ng-if=\"wireframeView === true;\" id=\"wireframingwork\">\n\t\t\t\t\t<div class=\"row workimages\" id=\"balamiqwork\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"balsamiqworkimage\"></div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tInitial Balsamiq Wireframe Example.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"lucidchart1\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"lucidchart1image\"></div>\n\t\t\t\t\t\t<div class=\"row imagetext\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"lucidchart2\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"lucidchart2image\"></div>\n\t\t\t\t\t\t<div class=\"row imagetext\"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div class=\"row workcontenthold\" ng-if=\"mockupView === true;\" id=\"mockups\">\n\t\t\t\t\t<div class=\"row workimages\" id=\"communicationa\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"communication1\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tHaving a conversation with the user is crucial for their experience. Here is an example of communcation with the user after interacting with the site, informing them on their next step.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"communicationb\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"communication2\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tProviding accessable ways to gain information allows the user to remain on track and confident in the product they are using. \n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"communicationc\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"communication3\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tThe use of Zendesk seen in this example provides an open line of communication between the user and myself. Giving the user an opportunity to have their questions answered quickly and allowing myself as a designer to gain data to further improve the user experience.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"mockupa\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"mockupdesktop\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tHere is an example of an implemented mockup when viewed on a Desktop. All mockups take RESPONSIVE design into consideration as seen in the next example.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"mockupb\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"mockup2\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tMobile view of previous mockup.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"analyticsa\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"analyticsimage1\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tHere is an example of planning for Google Analytics implementation.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"analyticsb\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"analyticsimage2\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tCloser view of previous image.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"analyticsc\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"analyticsimage3\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tMobile View.\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"reporta\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"analyticsreport1\">\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\tEvery analytics plan includes a written out plan including an explanation of\n\t\t\t\t\t\thow these custom events are being used, how they will be implemented onto an easy to view dashboard, what important KPI's are being tracked for future improvements and other important goals it intends to accomplish. \n\t\t\t\t\t\t</div>  \n\t\t\t\t\t</div>\n\t\t\t\t\t<div class=\"row workimages workimageshide\" id=\"reportb\">\n\t\t\t\t\t\t<div class=\"row imagehold\" id=\"analyticsreport2\"></div>\n\t\t\t\t\t\t<div class=\"row imagetext\">\n\t\t\t\t\t\t\tWritten report example. \n\t\t\t\t\t\t</div> \n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<div ng-if=\"finishedView = true;\" id=\"finished\">\n\t\t\t\t\t<div id=\"balamiqwork\"></div>\n\t\t\t\t\t<div id=\"lucidchart1\"></div>\n\t\t\t\t\t<div id=\"lucidchart2\"></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"col-xs-2\">\n\t\t\t<div ng-click=\"nextImage();\" id=\"rightarrow\"></div>\n\t\t</div>\n\t</div>\n</div>\n", controller: 'MainCtrl'}).
 		when('/test', {template: "<h1>Test.html</h1>", controller: 'MainCtrl'}).
 		when('/foo', {template: "<h1>Foo.html</h1>", controller: 'MainCtrl'});
 	$locationProvider.html5Mode(false);

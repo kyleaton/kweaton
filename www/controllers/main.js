@@ -17,6 +17,16 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 	$scope.wireframeimage2 = false;
 	$scope.wireframeimage3 = false;
 	$scope.wireframeimage3 = false;
+	$scope.mockupimage1 = true;
+	$scope.mockupimage2 = false;
+	$scope.mockupimage3 = false;
+	$scope.mockupimage4 = false;
+	$scope.mockupimage5 = false;
+	$scope.mockupimage6 = false;
+	$scope.mockupimage7 = false;
+	$scope.mockupimage8 = false;
+	$scope.mockupimage9 = false;
+	$scope.mockupimage10 = false;
 
 
 	$scope.skillOpen = function(){
@@ -333,109 +343,399 @@ module.exports = ['$scope','$location', '$routeParams', '$modal',  function ($sc
 		$('#workexamples').fadeIn(300);
 	}
 	$scope.nextImage = function(){
-		if ($scope.wireframeimage1 === true){
-			$('#balamiqwork').animate({
-			    opacity: 0,
-			    left: "-=2000",
-			  });
-			$('#lucidchart1').animate({
-			    opacity: 1,
-			    left: "-=2000",
-			  });
-				$scope.wireframeimage1 = false;
-				$scope.wireframeimage2 = true;
-				console.log('first' , $scope.wireframeimage1, 'image1');
-		}
-		else if($scope.wireframeimage2 === true){
-			$('#lucidchart1').animate({
-			    opacity: 0,
-			    left: "-=2000",
-			  });
-			$('#lucidchart2').animate({
-			    opacity: 1,
-			    left: "-=2000",
-			  });
-				$scope.wireframeimage2 = false;
-				$scope.wireframeimage3 = true;
-				console.log('second');
-		}
-		else if($scope.wireframeimage3 === true){
-			$('#lucidchart2').animate({
-			    opacity: 0,
-			    left: "-=2000",
-			  });
-			$('#wireframecopy').animate({
-			    opacity: 1,
-			    left: "-=2000",
-			  });
-				$scope.wireframeimage3 = false;
-				$scope.wireframeimage4 = true;
-				console.log('third');
-		}
-		else if($scope.wireframeimage4 === true){
-			$scope.wireframeView = false;
-			$('#workexamples').fadeOut(300, function(){
-				$('#lucidchart2').animate({
-			    opacity: 0,
-			    left: "+=4000",
-				});
-				$('#wireframecopy').animate({
+		if($scope.wireframeView === true){
+			if ($scope.wireframeimage1 === true){
+				$('#balamiqwork').animate({
 				    opacity: 0,
-				    left: "+=2000",
+				    left: "-=2000",
+				  });
+				$('#lucidchart1').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.wireframeimage1 = false;
+					$scope.wireframeimage2 = true;
+					console.log('first' , $scope.wireframeimage1, 'image1');
+			}
+			else if($scope.wireframeimage2 === true){
+				$('#lucidchart1').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#lucidchart2').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.wireframeimage2 = false;
+					$scope.wireframeimage3 = true;
+					console.log('second');
+			}
+			else if($scope.wireframeimage3 === true){
+				$('#lucidchart2').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#wireframecopy').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.wireframeimage3 = false;
+					$scope.wireframeimage4 = true;
+					console.log('third');
+			}
+			else if($scope.wireframeimage4 === true){
+				$scope.wireframeView = false;
+				$('#workexamples').fadeOut(300, function(){
+					$('#lucidchart2').animate({
+				    opacity: 0,
+				    left: "+=4000",
+					});
+					$('#wireframecopy').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#balamiqwork').animate({
+					    opacity: 1,
+					    left: "+=2000",
+					  });
+					$('#lucidchart1').animate({
+					    opacity: 0,
+					    left: "+=4000",
+					  });
+						$scope.wireframeimage4 = false;
+						$scope.wireframeimage1 = true;
+						console.log('close');
 				});
+			}
+		}
+		else if($scope.mockupView === true){
+			if ($scope.mockupimage1 === true){
+				$('#communicationa').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#communicationb').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage1 = false;
+					$scope.mockupimage2 = true;
+					console.log('first' , $scope.mockupimage1, 'image1');
+			}
+			else if($scope.mockupimage2 === true){
+				$('#communicationb').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#communicationc').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage2 = false;
+					$scope.mockupimage3 = true;
+					console.log('second');
+			}
+			else if($scope.mockupimage3 === true){
+				$('#communicationc').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#mockupa').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage3 = false;
+					$scope.mockupimage4 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage4 === true){
+				$('#mockupa').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#mockupb').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage4 = false;
+					$scope.mockupimage5 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage5 === true){
+				$('#mockupb').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#analyticsa').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage5 = false;
+					$scope.mockupimage6 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage6 === true){
+				$('#analyticsa').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#analyticsb').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage6 = false;
+					$scope.mockupimage7 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage7 === true){
+				$('#analyticsb').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#analyticsc').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage7 = false;
+					$scope.mockupimage8 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage8 === true){
+				$('#analyticsc').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#reporta').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage8 = false;
+					$scope.mockupimage9 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage9 === true){
+				$('#reporta').animate({
+				    opacity: 0,
+				    left: "-=2000",
+				  });
+				$('#reportb').animate({
+				    opacity: 1,
+				    left: "-=2000",
+				  });
+					$scope.mockupimage9 = false;
+					$scope.mockupimage10 = true;
+					console.log('third');
+			}
+			else if($scope.mockupimage10 === true){
+				$scope.mockupView = false;
+				$('#workexamples').fadeOut(300, function(){
+					$('#communicationc').animate({
+				    opacity: 0,
+				    left: "+=4000",
+					});
+					$('#mockupa').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#mockupb').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#analyticsa').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#analyticsb').animate({
+					    opacity: 0,
+					     left: "+=2000",
+					});
+					$('#analyticsc').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#reporta').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					}); 
+					$('#reportb').animate({
+					    opacity: 0,
+					    left: "+=2000",
+					});
+					$('#communicationa').animate({
+					    opacity: 1,
+					    left: "+=2000",
+					});
+					$('#communicationb').animate({
+					    opacity: 0,
+					    left: "+=4000",
+					  });
+						$scope.mockupimage10 = false;
+						$scope.mockupimage1 = true;
+						console.log('close');
+				});
+			}
+		}
+	}
+	$scope.prevImage = function(){
+		if($scope.wireframeView === true){
+			if ($scope.wireframeimage2 === true){
 				$('#balamiqwork').animate({
 				    opacity: 1,
 				    left: "+=2000",
 				  });
 				$('#lucidchart1').animate({
 				    opacity: 0,
-				    left: "+=4000",
+				    left: "+=2000",
 				  });
-					$scope.wireframeimage4 = false;
 					$scope.wireframeimage1 = true;
-					console.log('close');
-			});
+					$scope.wireframeimage2 = false;
+					console.log('first' , $scope.wireframeimage1, 'image1');
+			}
+			else if($scope.wireframeimage3 === true){
+				$('#lucidchart1').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#lucidchart2').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.wireframeimage2 = true;
+					$scope.wireframeimage3 = false;
+					console.log('second');
+			}
+			else if($scope.wireframeimage4 === true){
+				$('#lucidchart2').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#wireframecopy').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.wireframeimage3 = true;
+					$scope.wireframeimage4 = false;
+					console.log('third');
+			}
 		}
-	}
-	$scope.prevImage = function(){
-		if ($scope.wireframeimage2 === true){
-			$('#balamiqwork').animate({
-			    opacity: 1,
-			    left: "+=2000",
-			  });
-			$('#lucidchart1').animate({
-			    opacity: 0,
-			    left: "+=2000",
-			  });
-				$scope.wireframeimage1 = true;
-				$scope.wireframeimage2 = false;
-				console.log('first' , $scope.wireframeimage1, 'image1');
-		}
-		else if($scope.wireframeimage3 === true){
-			$('#lucidchart1').animate({
-			    opacity: 1,
-			    left: "+=2000",
-			  });
-			$('#lucidchart2').animate({
-			    opacity: 0,
-			    left: "+=2000",
-			  });
-				$scope.wireframeimage2 = true;
-				$scope.wireframeimage3 = false;
-				console.log('second');
-		}
-		else if($scope.wireframeimage4 === true){
-			$('#lucidchart2').animate({
-			    opacity: 1,
-			    left: "+=2000",
-			  });
-			$('#wireframecopy').animate({
-			    opacity: 0,
-			    left: "+=2000",
-			  });
-				$scope.wireframeimage3 = true;
-				$scope.wireframeimage4 = false;
-				console.log('third');
+		else if($scope.mockupView === true){
+			if($scope.mockupimage2 === true){
+				$('#communicationa').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#communicationb').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage1 = true;
+					$scope.mockupimage2 = false;
+					console.log('second');
+			}
+			else if($scope.mockupimage3 === true){
+				$('#communicationb').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#communicationc').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage2 = true;
+					$scope.mockupimage3 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage4 === true){
+				$('#communicationc').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#mockupa').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage3 = true;
+					$scope.mockupimage4 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage5 === true){
+				$('#mockupa').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#mockupb').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage4 = true;
+					$scope.mockupimage5 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage6 === true){
+				$('#mockupb').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#analyticsa').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage5 = true;
+					$scope.mockupimage6 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage7 === true){
+				$('#analyticsa').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#analyticsb').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage6 =true;
+					$scope.mockupimage7 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage8 === true){
+				$('#analyticsb').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#analyticsc').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage7 = true;
+					$scope.mockupimage8 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage9 === true){
+				$('#analyticsc').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#reporta').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage8 = true;
+					$scope.mockupimage9 = false;
+					console.log('third');
+			}
+			else if($scope.mockupimage10 === true){
+				$('#analyticsb').animate({
+				    opacity: 1,
+				    left: "+=2000",
+				  });
+				$('#reportc').animate({
+				    opacity: 0,
+				    left: "+=2000",
+				  });
+					$scope.mockupimage9 = true;
+					$scope.mockupimage10 = false;
+					console.log('third');
+			}
 		}
 	}
 	

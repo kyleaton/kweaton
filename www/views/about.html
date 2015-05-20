@@ -314,7 +314,7 @@
 	</div>
 	<div class="row">
 			<div class="col-sm-4">
-				<div id="wireframing" ng-click="wireframeView = !wireframeVew; viewOpen();" class="examplehold"></div>
+				<div id="wireframing" ng-click="wireframeView = !wireframeView; viewOpen();" class="examplehold"></div>
 			</div>
 			<div class="col-sm-4">
 				<div id="analytics" ng-click="mockupView = !mockupView; viewOpen();"   class="examplehold"></div>
@@ -331,7 +331,7 @@
 		</div>
 		<div class="col-xs-8">
 			<div class="viewingwork">
-				<div class="row workcontenthold" ng-if="wireframeView = true;" id="wireframingwork">
+				<div class="row workcontenthold" ng-if="wireframeView === true;" id="wireframingwork">
 					<div class="row workimages" id="balamiqwork">
 						<div class="row imagehold" id="balsamiqworkimage"></div>
 						<div class="row imagetext">
@@ -347,10 +347,77 @@
 						<div class="row imagetext"></div>
 					</div>
 				</div>
-				<div class="row workcontenthold" ng-if="mockupView = true;" id="mockups">
-					<div id="balamiqwork"></div>
-					<div id="lucidchart1"></div>
-					<div id="lucidchart2"></div>
+				<div class="row workcontenthold" ng-if="mockupView === true;" id="mockups">
+					<div class="row workimages" id="communicationa">
+						<div class="row imagehold" id="communication1">
+						</div>
+						<div class="row imagetext">
+							Having a conversation with the user is crucial for their experience. Here is an example of communcation with the user after interacting with the site, informing them on their next step.
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="communicationb">
+						<div class="row imagehold" id="communication2">
+						</div>
+						<div class="row imagetext">
+							Providing accessable ways to gain information allows the user to remain on track and confident in the product they are using. 
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="communicationc">
+						<div class="row imagehold" id="communication3">
+						</div>
+						<div class="row imagetext">
+							The use of Zendesk seen in this example provides an open line of communication between the user and myself. Giving the user an opportunity to have their questions answered quickly and allowing myself as a designer to gain data to further improve the user experience.
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="mockupa">
+						<div class="row imagehold" id="mockupdesktop">
+						</div>
+						<div class="row imagetext">
+							Here is an example of an implemented mockup when viewed on a Desktop. All mockups take RESPONSIVE design into consideration as seen in the next example.
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="mockupb">
+						<div class="row imagehold" id="mockup2">
+						</div>
+						<div class="row imagetext">
+							Mobile view of previous mockup.
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="analyticsa">
+						<div class="row imagehold" id="analyticsimage1">
+						</div>
+						<div class="row imagetext">
+							Here is an example of planning for Google Analytics implementation.
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="analyticsb">
+						<div class="row imagehold" id="analyticsimage2">
+						</div>
+						<div class="row imagetext">
+							Closer view of previous image.
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="analyticsc">
+						<div class="row imagehold" id="analyticsimage3">
+						</div>
+						<div class="row imagetext">
+							Mobile View.
+						</div>
+					</div>
+					<div class="row workimages workimageshide" id="reporta">
+						<div class="row imagehold" id="analyticsreport1">
+						</div>
+						<div class="row imagetext">
+						Every analytics plan includes a written out plan including an explanation of
+						how these custom events are being used, how they will be implemented onto an easy to view dashboard, what important KPI's are being tracked for future improvements and other important goals it intends to accomplish. 
+						</div>  
+					</div>
+					<div class="row workimages workimageshide" id="reportb">
+						<div class="row imagehold" id="analyticsreport2"></div>
+						<div class="row imagetext">
+							Written report example. 
+						</div> 
+					</div>
 				</div>
 				<div ng-if="finishedView = true;" id="finished">
 					<div id="balamiqwork"></div>
