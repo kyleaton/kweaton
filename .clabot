@@ -1,6 +1,4 @@
 {
   "contributors": [ "frank", "bob", "sam" ],
-  "message": "Thank you for your pull request and welcome to our community. We require contributors to sign our Contributor License Agreement, and we don't seem to have the users @kyleaton on file. In order for us to review and merge your code, please contact the project maintainers to get yourself added." 
-
-  Users missing a CLA: {{usersWithoutCLA}}
+  "message": "Thank you for your pull request and welcome to our community. We require contributors to sign our Contributor License Agreement, and we don't seem to have the users @kyleaton on file. In order for us to review and merge your code, please contact the project maintainers to get yourself added." Users missing a CLA: {{usersWithoutCLA}}
 }
