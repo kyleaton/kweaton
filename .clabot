@@ -2,3 +2,4 @@
   "contributors": [ "frank", "bob", "sam" ],
   "message": "We require contributors to sign our Contributor License Agreement, and we don't have {{usersWithoutCLA}} on file. In order for us to review and merge your code, please [sign the CLA](https://docs.google.com/spreadsheet/viewform?usp=drive_web&formkey=dHJVY1M5bzNzY0pwN2dRZjMxV0dXSkE6MA#gid=0)."
 }
+
