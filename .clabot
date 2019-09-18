@@ -1,3 +1,10 @@
 {
+<<<<<<< HEAD
   "contributors": [ "frank", "bob", "sam" ]
 }
+=======
+  "contributors": "https://spreadsheets.google.com/feeds/cells/1imJKY8a8Wa3CMo6nPsGhMBxZWh2fOo_qlbaxV4sps_Y/1/public/full?alt=json",
+  "message": "A new contributor, HUZZAH! Welcome and thanks for joining our community. In order to accept a pull request we require that all contributors sign our Contributor License Agreement. Please check out our article explaining why we have a CLA. We have two different CLAs, depending on whether you are contributing to GE in a personal or professional capacity. Please sign the one that is applicable to your situation so that we may accept your contribution: \r\r[Individual Contributor License Agreement v1.0](https://docs.google.com/forms/d/e/1FAIpQLSdA-aWKQ15yBzp8wKcFPpuxIyGwohGU1Hx-6Pa4hfaEbbb3fg/viewform?usp=sf_link) \r[Software Grant and Corporate Contributor License Agreement v1.0](https://docs.google.com/forms/d/e/1FAIpQLSf3RZ_ZRWOdymT8OnTxRh5FeIadfANLWUrhaSHadg_E20zBAQ/viewform?usp=sf_link) \r\rPlease reach out to @kyleaton or find Kyle Eaton on Slack if you have any questions or if you have already signed the CLA and are receiving this message in error. \r\rUsers missing a CLA: {{usersWithoutCLA}}"
+}
+
+>>>>>>> 2d873936894afa3d89a5251d2530f64b4a6965ac
